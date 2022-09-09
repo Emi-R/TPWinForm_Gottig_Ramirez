@@ -41,11 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Marca.cs" />
-=======
     <Compile Include="Categoria.cs" />
->>>>>>> 018cb2ccdf094c6a8af8a57878acde9526a2029d
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
