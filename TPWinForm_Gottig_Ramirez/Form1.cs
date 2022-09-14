@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TPWinForm_Gottig_Ramirez
 {
-    public partial class Form1 : Form
+    public partial class frmMenuPrincipal : Form
     {
-        public Form1()
+        public frmMenuPrincipal()
         {
             InitializeComponent();
         }
