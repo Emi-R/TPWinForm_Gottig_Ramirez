@@ -47,6 +47,7 @@
             this.btnArticulos.TabIndex = 2;
             this.btnArticulos.Text = "Articulos";
             this.btnArticulos.UseVisualStyleBackColor = false;
+            this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
             // 
             // lblTitulo
             // 

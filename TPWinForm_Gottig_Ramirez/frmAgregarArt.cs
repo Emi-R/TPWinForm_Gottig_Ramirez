@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace TPWinForm_Gottig_Ramirez
 {
-    public partial class frmMenuPrincipal : Form
+    public partial class frmAgregarArt : Form
     {
-        public frmMenuPrincipal()
+        public frmAgregarArt()
         {
             InitializeComponent();
         }
 
-        private void btnArticulos_Click(object sender, EventArgs e)
+        private void lblTituloAgregar_Click(object sender, EventArgs e)
         {
-            frmArticulos VentanaArt = new frmArticulos();
-            VentanaArt.ShowDialog();
+
         }
     }
 }
