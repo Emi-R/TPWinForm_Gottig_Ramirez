@@ -58,7 +58,8 @@
             // 
             this.lblTituloAgregar.AutoSize = true;
             this.lblTituloAgregar.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloAgregar.Location = new System.Drawing.Point(298, 27);
+            this.lblTituloAgregar.Location = new System.Drawing.Point(348, 29);
+            this.lblTituloAgregar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTituloAgregar.Name = "lblTituloAgregar";
             this.lblTituloAgregar.Size = new System.Drawing.Size(149, 25);
             this.lblTituloAgregar.TabIndex = 0;
@@ -67,58 +68,70 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(46, 82);
+            this.lblCodigo.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(54, 88);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(43, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(46, 14);
             this.lblCodigo.TabIndex = 1;
             this.lblCodigo.Text = "Código:";
             // 
             // tbxCodigo
             // 
-            this.tbxCodigo.Location = new System.Drawing.Point(99, 79);
+            this.tbxCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbxCodigo.Location = new System.Drawing.Point(115, 85);
+            this.tbxCodigo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxCodigo.Name = "tbxCodigo";
-            this.tbxCodigo.Size = new System.Drawing.Size(72, 20);
+            this.tbxCodigo.Size = new System.Drawing.Size(83, 22);
             this.tbxCodigo.TabIndex = 2;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(177, 82);
+            this.lblNombre.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(206, 88);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.Size = new System.Drawing.Size(53, 14);
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre:";
             // 
             // tbxNombre
             // 
-            this.tbxNombre.Location = new System.Drawing.Point(230, 79);
+            this.tbxNombre.Location = new System.Drawing.Point(268, 85);
+            this.tbxNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxNombre.Name = "tbxNombre";
-            this.tbxNombre.Size = new System.Drawing.Size(167, 20);
+            this.tbxNombre.Size = new System.Drawing.Size(194, 22);
             this.tbxNombre.TabIndex = 4;
             // 
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(24, 116);
+            this.lblDesc.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesc.Location = new System.Drawing.Point(28, 125);
+            this.lblDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(69, 13);
+            this.lblDesc.Size = new System.Drawing.Size(77, 14);
             this.lblDesc.TabIndex = 5;
             this.lblDesc.Text = "Descripción: ";
             // 
             // tbxDesc
             // 
-            this.tbxDesc.Location = new System.Drawing.Point(99, 113);
+            this.tbxDesc.Location = new System.Drawing.Point(115, 122);
+            this.tbxDesc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxDesc.Multiline = true;
             this.tbxDesc.Name = "tbxDesc";
-            this.tbxDesc.Size = new System.Drawing.Size(298, 73);
+            this.tbxDesc.Size = new System.Drawing.Size(347, 78);
             this.tbxDesc.TabIndex = 6;
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(46, 200);
+            this.lblMarca.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.Location = new System.Drawing.Point(54, 215);
+            this.lblMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(43, 13);
+            this.lblMarca.Size = new System.Drawing.Size(45, 14);
             this.lblMarca.TabIndex = 7;
             this.lblMarca.Text = "Marca: ";
             // 
@@ -126,17 +139,20 @@
             // 
             this.cbxMarcas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarcas.FormattingEnabled = true;
-            this.cbxMarcas.Location = new System.Drawing.Point(99, 197);
+            this.cbxMarcas.Location = new System.Drawing.Point(115, 212);
+            this.cbxMarcas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxMarcas.Name = "cbxMarcas";
-            this.cbxMarcas.Size = new System.Drawing.Size(146, 21);
+            this.cbxMarcas.Size = new System.Drawing.Size(170, 22);
             this.cbxMarcas.TabIndex = 8;
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(34, 233);
+            this.lblCategoria.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(40, 251);
+            this.lblCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(55, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(60, 14);
             this.lblCategoria.TabIndex = 9;
             this.lblCategoria.Text = "Categoria:";
             // 
@@ -144,14 +160,16 @@
             // 
             this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Location = new System.Drawing.Point(99, 230);
+            this.cbxCategoria.Location = new System.Drawing.Point(115, 248);
+            this.cbxCategoria.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(146, 21);
+            this.cbxCategoria.Size = new System.Drawing.Size(170, 22);
             this.cbxCategoria.TabIndex = 10;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(307, 223);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -161,9 +179,11 @@
             // gpbVistaPrevia
             // 
             this.gpbVistaPrevia.Controls.Add(this.pictureBox1);
-            this.gpbVistaPrevia.Location = new System.Drawing.Point(425, 72);
+            this.gpbVistaPrevia.Location = new System.Drawing.Point(496, 78);
+            this.gpbVistaPrevia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gpbVistaPrevia.Name = "gpbVistaPrevia";
-            this.gpbVistaPrevia.Size = new System.Drawing.Size(318, 239);
+            this.gpbVistaPrevia.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gpbVistaPrevia.Size = new System.Drawing.Size(321, 241);
             this.gpbVistaPrevia.TabIndex = 13;
             this.gpbVistaPrevia.TabStop = false;
             // 
@@ -171,64 +191,74 @@
             // 
             this.lblVistaPrevia.AutoSize = true;
             this.lblVistaPrevia.BackColor = System.Drawing.SystemColors.Control;
-            this.lblVistaPrevia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVistaPrevia.Location = new System.Drawing.Point(532, 314);
+            this.lblVistaPrevia.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVistaPrevia.Location = new System.Drawing.Point(599, 322);
+            this.lblVistaPrevia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVistaPrevia.Name = "lblVistaPrevia";
-            this.lblVistaPrevia.Size = new System.Drawing.Size(101, 13);
+            this.lblVistaPrevia.Size = new System.Drawing.Size(110, 14);
             this.lblVistaPrevia.TabIndex = 12;
             this.lblVistaPrevia.Text = "Vista Previa Imagen";
             // 
             // lblImagen
             // 
             this.lblImagen.AutoSize = true;
-            this.lblImagen.Location = new System.Drawing.Point(44, 265);
+            this.lblImagen.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImagen.Location = new System.Drawing.Point(51, 285);
+            this.lblImagen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImagen.Name = "lblImagen";
-            this.lblImagen.Size = new System.Drawing.Size(45, 13);
+            this.lblImagen.Size = new System.Drawing.Size(48, 14);
             this.lblImagen.TabIndex = 14;
             this.lblImagen.Text = "Imagen:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 262);
+            this.textBox1.Location = new System.Drawing.Point(115, 282);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 20);
+            this.textBox1.Size = new System.Drawing.Size(303, 22);
             this.textBox1.TabIndex = 15;
             // 
             // btnCargarImg
             // 
             this.btnCargarImg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCargarImg.Image = ((System.Drawing.Image)(resources.GetObject("btnCargarImg.Image")));
-            this.btnCargarImg.Location = new System.Drawing.Point(365, 262);
+            this.btnCargarImg.Location = new System.Drawing.Point(426, 282);
+            this.btnCargarImg.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCargarImg.Name = "btnCargarImg";
-            this.btnCargarImg.Size = new System.Drawing.Size(32, 20);
+            this.btnCargarImg.Size = new System.Drawing.Size(37, 22);
             this.btnCargarImg.TabIndex = 16;
             this.btnCargarImg.UseVisualStyleBackColor = true;
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(49, 295);
+            this.lblPrecio.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Location = new System.Drawing.Point(57, 318);
+            this.lblPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(40, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(44, 14);
             this.lblPrecio.TabIndex = 17;
             this.lblPrecio.Text = "Precio:";
             // 
             // textBox2
             // 
             this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Location = new System.Drawing.Point(99, 291);
+            this.textBox2.Location = new System.Drawing.Point(115, 313);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox2.MaxLength = 7;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(72, 20);
+            this.textBox2.Size = new System.Drawing.Size(83, 22);
             this.textBox2.TabIndex = 18;
             this.textBox2.Tag = "";
             // 
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(273, 337);
+            this.btnCancelar.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(318, 363);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(124, 41);
+            this.btnCancelar.Size = new System.Drawing.Size(145, 44);
             this.btnCancelar.TabIndex = 19;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -236,9 +266,11 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(99, 337);
+            this.btnGuardar.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(115, 363);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(124, 41);
+            this.btnGuardar.Size = new System.Drawing.Size(145, 44);
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -247,10 +279,10 @@
             // frmAgregarArt
             // 
             this.AcceptButton = this.btnGuardar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(763, 395);
+            this.ClientSize = new System.Drawing.Size(890, 425);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.textBox2);
@@ -271,6 +303,8 @@
             this.Controls.Add(this.tbxCodigo);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblTituloAgregar);
+            this.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmAgregarArt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Artículo";

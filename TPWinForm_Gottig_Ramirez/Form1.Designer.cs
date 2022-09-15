@@ -38,7 +38,7 @@
             // 
             this.btnArticulos.BackColor = System.Drawing.Color.SkyBlue;
             this.btnArticulos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnArticulos.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArticulos.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArticulos.Image = ((System.Drawing.Image)(resources.GetObject("btnArticulos.Image")));
             this.btnArticulos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnArticulos.Location = new System.Drawing.Point(84, 224);
