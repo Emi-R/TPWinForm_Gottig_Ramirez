@@ -32,6 +32,9 @@ namespace TPWinForm_Gottig_Ramirez
         {
             MarcaNegocio marcaNegocio = new MarcaNegocio();
             cbxMarcas.DataSource = marcaNegocio.listar();
+
+            CategoriaNegocio catNegocio = new CategoriaNegocio();
+            cbxCategoria.DataSource = catNegocio.listar();
         }
     }
 }
