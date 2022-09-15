@@ -14,11 +14,19 @@ namespace TPWinForm_Gottig_Ramirez
 {
     public partial class frmAgregarArt : Form
     {
+        private Articulo articulo = null;
         public frmAgregarArt()
         {
             InitializeComponent();
         }
 
+        public frmAgregarArt(Articulo art)
+        {
+            InitializeComponent();
+            this.articulo = art;
+            this.lblTituloAgregar.Text = $"Modificar articulo #{this.articulo.Codigo}";
+            Text = "Modificar Articulo";
+        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -33,6 +41,9 @@ namespace TPWinForm_Gottig_Ramirez
 
             try
             {
+                if (articulo == null)
+                    articulo = new Articulo();
+
                 nuevo.Codigo = tbxCodigo.Text;
                 nuevo.Nombre = tbxNombre.Text;
                 nuevo.Descripcion = tbxDesc.Text;
@@ -46,8 +57,16 @@ namespace TPWinForm_Gottig_Ramirez
                 nuevo.ImagenUrl = tbxImagenUrl.Text;
                 nuevo.Precio = int.Parse(tbxPrecio.Text);
 
-                articuloNegocio.AgregarArticulo(nuevo);
-                MessageBox.Show("Articulo agregado exitosamente!");
+                if(articulo.Id != 0)
+                {
+                    articuloNegocio.ModificarArticulo(nuevo);
+                    MessageBox.Show("Articulo modificado exitosamente!");
+                }
+                else
+                {
+                    articuloNegocio.AgregarArticulo(nuevo);
+                    MessageBox.Show("Articulo agregado exitosamente!");
+                }
 
                 this.Close();
             }
@@ -62,10 +81,54 @@ namespace TPWinForm_Gottig_Ramirez
         private void frmAgregarArt_Load(object sender, EventArgs e)
         {
             MarcaNegocio marcaNegocio = new MarcaNegocio();
-            cbxMarcas.DataSource = marcaNegocio.listar();
-
             CategoriaNegocio catNegocio = new CategoriaNegocio();
-            cbxCategoria.DataSource = catNegocio.listar();
+
+            try
+            {
+                cbxMarcas.DataSource = marcaNegocio.listar();
+                cbxMarcas.ValueMember = "ID";
+                cbxMarcas.DisplayMember = "Descripcion";
+
+
+                cbxCategoria.DataSource = catNegocio.listar();
+                cbxCategoria.ValueMember = "ID";
+                cbxCategoria.DisplayMember = "Descripcion";
+
+                if(articulo != null)
+                {
+                    tbxCodigo.Text = articulo.Codigo;
+                    tbxNombre.Text = articulo.Nombre;
+                    tbxDesc.Text = articulo.Descripcion;
+
+                    //falta arreglar 
+                    cbxCategoria.SelectedValue = articulo.Categoria.ID;
+                    cbxMarcas.SelectedValue = articulo.Marca.ID;
+
+                    tbxImagenUrl.Text = articulo.ImagenUrl;
+                    //img tiene que ir fixed al recuadro
+                    cargarImagen(articulo.ImagenUrl.ToString());
+
+                    tbxPrecio.Text = articulo.Precio.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
+
+        private void cargarImagen(string img)
+        {
+            try
+            {
+                pictureBox1.Load(img);
+            }
+            catch (Exception ex)
+            {
+                pictureBox1.Load("https://budmil.at/files/system/no_image.png");
+            }
+        }
+
     }
 }

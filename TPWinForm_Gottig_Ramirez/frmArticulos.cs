@@ -78,7 +78,11 @@ namespace TPWinForm_Gottig_Ramirez
 
         private void btnModificarArt_Click(object sender, EventArgs e)
         {
+            Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            frmAgregarArt formModificar = new frmAgregarArt(articulo);
+            formModificar.ShowDialog();
 
+            //aca cargar
         }
     }
 }

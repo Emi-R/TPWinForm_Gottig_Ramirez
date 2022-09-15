@@ -82,5 +82,28 @@ namespace Negocio
                 db.CerrarConexion();
             }
         }
+
+        public void ModificarArticulo(Articulo articulo)
+        {
+            try
+            {
+                string consulta = $"UPDATE ARTICULOS SET CODIGO = {articulo.Codigo}, NOMBRE = '{articulo.Nombre}', Descripcion ='{articulo.Descripcion}', IdMarca=@IdMarca, IdCategoria=@IdCategoria, ImagenUrl = '{articulo.ImagenUrl}', PRECIO = {articulo.Precio} WHERE ID = {articulo.Id}";
+                db.SetearConsulta(consulta);
+
+                db.SetearParametro("@IdMarca", articulo.Marca.ID);
+                db.SetearParametro("@IdCategoria", articulo.Categoria.ID);
+
+                db.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+        }
     }
 }
