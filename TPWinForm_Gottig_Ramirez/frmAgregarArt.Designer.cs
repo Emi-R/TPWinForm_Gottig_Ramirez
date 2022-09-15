@@ -63,7 +63,6 @@
             this.lblTituloAgregar.Size = new System.Drawing.Size(149, 25);
             this.lblTituloAgregar.TabIndex = 0;
             this.lblTituloAgregar.Text = "Artículo nuevo";
-            this.lblTituloAgregar.Click += new System.EventHandler(this.lblTituloAgregar_Click);
             // 
             // lblCodigo
             // 
@@ -125,6 +124,7 @@
             // 
             // cbxMarcas
             // 
+            this.cbxMarcas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarcas.FormattingEnabled = true;
             this.cbxMarcas.Location = new System.Drawing.Point(99, 197);
             this.cbxMarcas.Name = "cbxMarcas";
@@ -156,7 +156,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // gpbVistaPrevia
             // 
@@ -186,7 +185,6 @@
             this.lblImagen.Size = new System.Drawing.Size(45, 13);
             this.lblImagen.TabIndex = 14;
             this.lblImagen.Text = "Imagen:";
-            this.lblImagen.Click += new System.EventHandler(this.lblImagen_Click);
             // 
             // textBox1
             // 
@@ -204,7 +202,6 @@
             this.btnCargarImg.Size = new System.Drawing.Size(32, 20);
             this.btnCargarImg.TabIndex = 16;
             this.btnCargarImg.UseVisualStyleBackColor = true;
-            this.btnCargarImg.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblPrecio
             // 
@@ -244,6 +241,7 @@
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // frmAgregarArt
             // 

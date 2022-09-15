@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,34 +18,20 @@ namespace TPWinForm_Gottig_Ramirez
             InitializeComponent();
         }
 
-        private void lblTituloAgregar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
 
         }
 
         private void frmAgregarArt_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblImagen_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            cbxMarcas.DataSource = marcaNegocio.listar();
         }
     }
 }
