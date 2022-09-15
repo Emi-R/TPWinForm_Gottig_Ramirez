@@ -34,10 +34,10 @@ namespace Negocio
                     articulo.Marca = new Marca();
 
                     //if (!(db.Reader["Marca"] is DBNull))
-                        articulo.Marca.Descripcion = (string)db.Reader["Marca"];
+                    articulo.Marca.Descripcion = (string)db.Reader["Marca"];
 
                     //if (!(db.Reader["Categoria"] is DBNull))
-                        articulo.Categoria = new Categoria();
+                    articulo.Categoria = new Categoria();
 
                     articulo.Categoria.Descripcion = (string)db.Reader["Categoria"];
                     articulo.ImagenUrl = (string)db.Reader["ImagenUrl"];
@@ -72,7 +72,7 @@ namespace Negocio
                 db.SetearConsulta(Consulta);
                 db.EjecutarAccion();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
                 throw ex;
@@ -80,6 +80,24 @@ namespace Negocio
             finally
             {
                 db.CerrarConexion();
+            }
+        }
+
+        public void EliminarArticulo(Articulo AEliminar)
+        {
+            string Accion = $"Delete From ARTICULOS Where ARTICULOS.Id = {AEliminar.Id}";
+
+            try
+            {
+                db.SetearConsulta(Accion);
+                db.EjecutarAccion();
+
+                MessageBox.Show($"Articulo {AEliminar.Codigo} eliminado!!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
             }
         }
     }
