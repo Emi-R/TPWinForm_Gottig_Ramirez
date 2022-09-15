@@ -16,7 +16,7 @@ namespace Negocio
         public List<Articulo> ListarArticulos()
         {
             List<Articulo> articulos = new List<Articulo>();
-            string consulta = "SELECT A.ID AS ID, A.CODIGO AS CODIGO, A.NOMBRE AS NOMBRE, A.DESCRIPCION AS DESCRIPCION, M.Descripcion AS MARCA, C.Descripcion AS CATEGORIA, A.Precio FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id";
+            string consulta = "SELECT A.ID AS ID, A.CODIGO AS CODIGO, A.NOMBRE AS NOMBRE, A.DESCRIPCION AS DESCRIPCION, M.Descripcion AS MARCA, C.Descripcion AS CATEGORIA, A.IMAGENURL AS IMAGENURL, A.Precio FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id";
             db.SetearConsulta(consulta);
             db.EjecutarLectura();
 
@@ -25,8 +25,6 @@ namespace Negocio
                 while (db.Reader.Read())
                 {
                     Articulo articulo = new Articulo();
-                    Marca marca = new Marca();
-                    Categoria cat = new Categoria();
 
                     articulo.Id = (int)db.Reader["ID"];
                     articulo.Codigo = (string)db.Reader["Codigo"];
@@ -38,7 +36,8 @@ namespace Negocio
 
                     articulo.Categoria = new Categoria();
                     articulo.Categoria.Descripcion = (string)db.Reader["Categoria"];
-                    articulo.Precio = (float)db.Reader.GetDecimal(6);
+                    articulo.ImagenUrl = (string)db.Reader["ImagenUrl"];
+                    articulo.Precio = (float)db.Reader.GetDecimal(7);
 
                     articulos.Add(articulo);
                 }

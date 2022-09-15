@@ -14,24 +14,38 @@ namespace TPWinForm_Gottig_Ramirez
 {
     public partial class frmArticulos : Form
     {
+
+       private List<Articulo> listaArt = new List<Articulo>();
+
         public frmArticulos()
         {
             InitializeComponent();
         }
 
+        private void cargarImagen(string img)
+        {
+            try
+            {
+
+            pbxArt.Load(img);
+
+            }
+            catch (Exception ex)
+            {
+                pbxArt.Load("https://budmil.at/files/system/no_image.png");
+            }
+        }
+
         private void frmArticulos_Load(object sender, EventArgs e)
         {
             ArticuloNegocio a = new ArticuloNegocio();
-            dgvArticulos.DataSource = a.ListarArticulos();
+
+            listaArt = a.ListarArticulos();
+            dgvArticulos.DataSource = listaArt;
             dgvArticulos.Columns["ImagenUrl"].Visible = false;
             dgvArticulos.Columns["Id"].Visible = false;
 
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            cargarImagen(listaArt[0].ImagenUrl);
         }
 
         private void btnAgregarArt_Click(object sender, EventArgs e)
@@ -43,6 +57,13 @@ namespace TPWinForm_Gottig_Ramirez
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo picked = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            cargarImagen(picked.ImagenUrl);
         }
     }
 }
