@@ -30,6 +30,7 @@ namespace Negocio
         public void EjecutarLectura()
         {
             command.Connection = connection;
+
             try
             {
                 connection.Open();
@@ -40,6 +41,28 @@ namespace Negocio
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        public void EjecutarAccion()
+        {
+            command.Connection = connection;
+
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+        public void SetearParametro(string p, object value)
+        {
+            command.Parameters.AddWithValue(p, value);
+        }
+
 
         public void CerrarConexion()
         {

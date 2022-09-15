@@ -44,10 +44,10 @@
             this.gpbVistaPrevia = new System.Windows.Forms.GroupBox();
             this.lblVistaPrevia = new System.Windows.Forms.Label();
             this.lblImagen = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxImagenUrl = new System.Windows.Forms.TextBox();
             this.btnCargarImg = new System.Windows.Forms.Button();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbxPrecio = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -210,13 +210,13 @@
             this.lblImagen.TabIndex = 14;
             this.lblImagen.Text = "Imagen:";
             // 
-            // textBox1
+            // tbxImagenUrl
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 282);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(303, 22);
-            this.textBox1.TabIndex = 15;
+            this.tbxImagenUrl.Location = new System.Drawing.Point(115, 282);
+            this.tbxImagenUrl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tbxImagenUrl.Name = "tbxImagenUrl";
+            this.tbxImagenUrl.Size = new System.Drawing.Size(303, 22);
+            this.tbxImagenUrl.TabIndex = 15;
             // 
             // btnCargarImg
             // 
@@ -240,16 +240,16 @@
             this.lblPrecio.TabIndex = 17;
             this.lblPrecio.Text = "Precio:";
             // 
-            // textBox2
+            // tbxPrecio
             // 
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Location = new System.Drawing.Point(115, 313);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox2.MaxLength = 7;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(83, 22);
-            this.textBox2.TabIndex = 18;
-            this.textBox2.Tag = "";
+            this.tbxPrecio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbxPrecio.Location = new System.Drawing.Point(115, 313);
+            this.tbxPrecio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tbxPrecio.MaxLength = 7;
+            this.tbxPrecio.Name = "tbxPrecio";
+            this.tbxPrecio.Size = new System.Drawing.Size(83, 22);
+            this.tbxPrecio.TabIndex = 18;
+            this.tbxPrecio.Tag = "";
             // 
             // btnCancelar
             // 
@@ -285,10 +285,10 @@
             this.ClientSize = new System.Drawing.Size(890, 425);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbxPrecio);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.btnCargarImg);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxImagenUrl);
             this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.lblVistaPrevia);
             this.Controls.Add(this.gpbVistaPrevia);
@@ -304,7 +304,9 @@
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblTituloAgregar);
             this.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximizeBox = false;
             this.Name = "frmAgregarArt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Artículo";
@@ -334,10 +336,10 @@
         private System.Windows.Forms.GroupBox gpbVistaPrevia;
         private System.Windows.Forms.Label lblVistaPrevia;
         private System.Windows.Forms.Label lblImagen;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxImagenUrl;
         private System.Windows.Forms.Button btnCargarImg;
         private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbxPrecio;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
     }
