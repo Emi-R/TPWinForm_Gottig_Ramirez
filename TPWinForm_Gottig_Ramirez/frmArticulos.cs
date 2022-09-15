@@ -15,7 +15,7 @@ namespace TPWinForm_Gottig_Ramirez
     public partial class frmArticulos : Form
     {
 
-       private List<Articulo> listaArt = new List<Articulo>();
+        private List<Articulo> listaArt = new List<Articulo>();
 
         public frmArticulos()
         {
@@ -27,7 +27,7 @@ namespace TPWinForm_Gottig_Ramirez
             try
             {
 
-            pbxArt.Load(img);
+                pbxArt.Load(img);
 
             }
             catch (Exception ex)
@@ -40,12 +40,22 @@ namespace TPWinForm_Gottig_Ramirez
         {
             ArticuloNegocio a = new ArticuloNegocio();
 
-            listaArt = a.ListarArticulos();
-            dgvArticulos.DataSource = listaArt;
-            dgvArticulos.Columns["ImagenUrl"].Visible = false;
-            dgvArticulos.Columns["Id"].Visible = false;
 
-            cargarImagen(listaArt[0].ImagenUrl);
+            try
+            {
+                listaArt = a.ListarArticulos();
+                dgvArticulos.DataSource = listaArt;
+                dgvArticulos.Columns["ImagenUrl"].Visible = false;
+                dgvArticulos.Columns["Id"].Visible = false;
+
+                cargarImagen(listaArt[0].ImagenUrl);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
         }
 
         private void btnAgregarArt_Click(object sender, EventArgs e)

@@ -32,9 +32,13 @@ namespace Negocio
                     articulo.Descripcion = (string)db.Reader["Descripcion"];
 
                     articulo.Marca = new Marca();
-                    articulo.Marca.Descripcion = (string)db.Reader["Marca"];
 
-                    articulo.Categoria = new Categoria();
+                    //if (!(db.Reader["Marca"] is DBNull))
+                        articulo.Marca.Descripcion = (string)db.Reader["Marca"];
+
+                    //if (!(db.Reader["Categoria"] is DBNull))
+                        articulo.Categoria = new Categoria();
+
                     articulo.Categoria.Descripcion = (string)db.Reader["Categoria"];
                     articulo.ImagenUrl = (string)db.Reader["ImagenUrl"];
                     articulo.Precio = (float)db.Reader.GetDecimal(7);
@@ -44,7 +48,7 @@ namespace Negocio
 
                 return articulos;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
                 throw ex;
@@ -53,7 +57,7 @@ namespace Negocio
             {
                 db.CerrarConexion();
             }
-            
+
         }
     }
 }
