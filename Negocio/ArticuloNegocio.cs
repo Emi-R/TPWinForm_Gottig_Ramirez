@@ -59,5 +59,28 @@ namespace Negocio
             }
 
         }
+
+        public void AgregarArticulo(Articulo nuevo)
+        {
+            try
+            {
+                db.SetearParametro("@IdMarca", nuevo.Marca.ID);
+                db.SetearParametro("@IdCategoria", nuevo.Categoria.ID);
+
+                string Consulta = $"Insert Into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) Values ('{nuevo.Codigo}', '{nuevo.Nombre}', '{nuevo.Descripcion}', @IdMarca, @IdCategoria, '{nuevo.ImagenUrl}',  {nuevo.Precio})";
+
+                db.SetearConsulta(Consulta);
+                db.EjecutarAccion();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+        }
     }
 }

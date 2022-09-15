@@ -29,6 +29,7 @@ namespace TPWinForm_Gottig_Ramirez
             AccesoDatos db = new AccesoDatos();
 
             Articulo nuevo = new Articulo();
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
             try
             {
@@ -45,15 +46,10 @@ namespace TPWinForm_Gottig_Ramirez
                 nuevo.ImagenUrl = tbxImagenUrl.Text;
                 nuevo.Precio = int.Parse(tbxPrecio.Text);
 
-                db.SetearParametro("@IdMarca", nuevo.Marca.ID);
-                db.SetearParametro("@IdCategoria", nuevo.Categoria.ID);
-
-                string Consulta = $"Insert Into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) Values ('{nuevo.Codigo}', '{nuevo.Nombre}', '{nuevo.Descripcion}', @IdMarca, @IdCategoria, '{nuevo.ImagenUrl}',  {nuevo.Precio})";
-
-                db.SetearConsulta(Consulta);
-                db.EjecutarAccion();
-
+                articuloNegocio.AgregarArticulo(nuevo);
                 MessageBox.Show("Articulo agregado exitosamente!");
+
+                this.Close();
             }
             catch (Exception ex)
             {

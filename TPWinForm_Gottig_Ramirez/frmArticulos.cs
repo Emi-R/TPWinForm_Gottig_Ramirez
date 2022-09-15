@@ -75,5 +75,10 @@ namespace TPWinForm_Gottig_Ramirez
 
             cargarImagen(picked.ImagenUrl);
         }
+
+        private void btnModificarArt_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
