@@ -21,10 +21,11 @@ namespace TPWinForm_Gottig_Ramirez
 
         private void frmArticulos_Load(object sender, EventArgs e)
         {
-           ArticuloNegocio a = new ArticuloNegocio();
-           dgvArticulos.DataSource = a.ListarArticulos();
+            ArticuloNegocio a = new ArticuloNegocio();
+            dgvArticulos.DataSource = a.ListarArticulos();
             dgvArticulos.Columns["ImagenUrl"].Visible = false;
-           
+            dgvArticulos.Columns["Id"].Visible = false;
+
 
         }
 

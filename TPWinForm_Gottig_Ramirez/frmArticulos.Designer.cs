@@ -47,11 +47,15 @@
             // 
             this.dgvArticulos.AllowUserToAddRows = false;
             this.dgvArticulos.AllowUserToDeleteRows = false;
-            this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvArticulos.Cursor = System.Windows.Forms.Cursors.PanNW;
+            this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.Location = new System.Drawing.Point(216, 104);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
-            this.dgvArticulos.Size = new System.Drawing.Size(734, 418);
+            this.dgvArticulos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvArticulos.Size = new System.Drawing.Size(643, 462);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -71,7 +75,7 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1332, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1218, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,7 +98,7 @@
             // gbxImagen
             // 
             this.gbxImagen.Controls.Add(this.pictureBox1);
-            this.gbxImagen.Location = new System.Drawing.Point(995, 173);
+            this.gbxImagen.Location = new System.Drawing.Point(881, 173);
             this.gbxImagen.Name = "gbxImagen";
             this.gbxImagen.Size = new System.Drawing.Size(314, 252);
             this.gbxImagen.TabIndex = 4;
@@ -125,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1332, 534);
+            this.ClientSize = new System.Drawing.Size(1218, 578);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gbxImagen);
             this.Controls.Add(this.btnAgregarArt);

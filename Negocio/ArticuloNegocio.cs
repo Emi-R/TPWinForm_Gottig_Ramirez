@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,8 +25,20 @@ namespace Negocio
                 while (db.Reader.Read())
                 {
                     Articulo articulo = new Articulo();
-                    articulo.Id = (int)db.Reader["ID"];
+                    Marca marca = new Marca();
+                    Categoria cat = new Categoria();
 
+                    articulo.Id = (int)db.Reader["ID"];
+                    articulo.Codigo = (string)db.Reader["Codigo"];
+                    articulo.Nombre = (string)db.Reader["Nombre"];
+                    articulo.Descripcion = (string)db.Reader["Descripcion"];
+
+                    articulo.Marca = new Marca();
+                    articulo.Marca.Descripcion = (string)db.Reader["Marca"];
+
+                    articulo.Categoria = new Categoria();
+                    articulo.Categoria.Descripcion = (string)db.Reader["Categoria"];
+                    articulo.Precio = (float)db.Reader.GetDecimal(6);
 
                     articulos.Add(articulo);
                 }
