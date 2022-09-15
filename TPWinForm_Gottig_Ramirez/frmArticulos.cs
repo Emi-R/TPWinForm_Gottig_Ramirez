@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace TPWinForm_Gottig_Ramirez
 {
@@ -19,6 +21,10 @@ namespace TPWinForm_Gottig_Ramirez
 
         private void frmArticulos_Load(object sender, EventArgs e)
         {
+           ArticuloNegocio a = new ArticuloNegocio();
+           dgvArticulos.DataSource = a.ListarArticulos();
+            dgvArticulos.Columns["ImagenUrl"].Visible = false;
+           
 
         }
 
@@ -31,6 +37,11 @@ namespace TPWinForm_Gottig_Ramirez
         {
             frmAgregarArt VentanaAgregarArt = new frmAgregarArt();
             VentanaAgregarArt.ShowDialog();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -10,12 +10,14 @@ namespace Negocio
 {
     public class ArticuloNegocio
     {
-        AccesoDatos db = new AccesoDatos();
+        private AccesoDatos db = new AccesoDatos();
+
         public List<Articulo> ListarArticulos()
         {
             List<Articulo> articulos = new List<Articulo>();
-            string consulta = "SELECT A.ID AS ID, A.CODIGO AS CODIGO, A.NOMBRE AS NOMRE, A.DESCRIPCION AS DESCRIPCION, M.Descripcion AS MARCA, C.Descripcion AS CATEGORIA, A.Precio FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id";
+            string consulta = "SELECT A.ID AS ID, A.CODIGO AS CODIGO, A.NOMBRE AS NOMBRE, A.DESCRIPCION AS DESCRIPCION, M.Descripcion AS MARCA, C.Descripcion AS CATEGORIA, A.Precio FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id";
             db.SetearConsulta(consulta);
+            db.EjecutarLectura();
 
             try
             {
@@ -24,6 +26,7 @@ namespace Negocio
                     Articulo articulo = new Articulo();
                     articulo.Id = (int)db.Reader["ID"];
 
+
                     articulos.Add(articulo);
                 }
 
@@ -31,6 +34,7 @@ namespace Negocio
             }
             catch(Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 throw ex;
             }
             finally
