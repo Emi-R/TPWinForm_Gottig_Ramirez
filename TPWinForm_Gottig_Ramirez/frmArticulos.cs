@@ -36,7 +36,7 @@ namespace TPWinForm_Gottig_Ramirez
             }
         }
 
-        private void frmArticulos_Load(object sender, EventArgs e)
+        private void updateGrilla()
         {
             ArticuloNegocio a = new ArticuloNegocio();
 
@@ -54,35 +54,34 @@ namespace TPWinForm_Gottig_Ramirez
 
                 MessageBox.Show(ex.ToString());
             }
-
         }
+
+        private void frmArticulos_Load(object sender, EventArgs e)
+        {
+            updateGrilla();
+        }
+
+
+        //Boton Agregar Articulo
 
         private void btnAgregarArt_Click(object sender, EventArgs e)
         {
             frmAgregarArt VentanaAgregarArt = new frmAgregarArt();
             VentanaAgregarArt.ShowDialog();
+            updateGrilla();
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
-        {
-            Articulo picked = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-
-            cargarImagen(picked.ImagenUrl);
-        }
+        //Boton Modificar Articulo
 
         private void btnModificarArt_Click(object sender, EventArgs e)
         {
             Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             frmAgregarArt formModificar = new frmAgregarArt(articulo);
             formModificar.ShowDialog();
-
-            //aca cargar
+            updateGrilla();
         }
+
+        //Boton Eliminar Articulo
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -101,6 +100,7 @@ namespace TPWinForm_Gottig_Ramirez
                 try
                 {
                     articuloNegocio.EliminarArticulo(picked);
+                    updateGrilla();
 
                 }
                 catch (Exception ex)
@@ -114,5 +114,21 @@ namespace TPWinForm_Gottig_Ramirez
                 return;
             }
         }
+
+        //Boton Volver A Menu
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo picked = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            cargarImagen(picked.ImagenUrl);
+        }
+
+
     }
 }

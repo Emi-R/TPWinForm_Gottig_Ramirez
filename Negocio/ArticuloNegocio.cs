@@ -35,15 +35,15 @@ namespace Negocio
 
                     if (!(db.Reader["MARCA"] is DBNull))
                     {
-                    articulo.Marca.ID = (int)db.Reader["IdMarca"];
-                    articulo.Marca.Descripcion = (string)db.Reader["Marca"];
+                        articulo.Marca.ID = (int)db.Reader["IdMarca"];
+                        articulo.Marca.Descripcion = (string)db.Reader["Marca"];
                     }
 
                     if (!(db.Reader["CATEGORIA"] is DBNull))
                     {
-                    articulo.Categoria = new Categoria();
-                    articulo.Categoria.ID = (int)db.Reader["IdCategoria"];
-                    articulo.Categoria.Descripcion = (string)db.Reader["Categoria"];
+                        articulo.Categoria = new Categoria();
+                        articulo.Categoria.ID = (int)db.Reader["IdCategoria"];
+                        articulo.Categoria.Descripcion = (string)db.Reader["Categoria"];
                     }
 
 
@@ -55,7 +55,7 @@ namespace Negocio
 
                 return articulos;
             }
-            
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -106,6 +106,10 @@ namespace Negocio
             {
                 MessageBox.Show(ex.ToString());
                 throw;
+            }
+            finally 
+            { 
+                db.CerrarConexion(); 
             }
         }
 
