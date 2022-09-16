@@ -34,9 +34,7 @@ namespace TPWinForm_Gottig_Ramirez
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            AccesoDatos db = new AccesoDatos();
 
-            //Articulo nuevo = new Articulo();
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
             try
@@ -70,7 +68,7 @@ namespace TPWinForm_Gottig_Ramirez
 
                 this.Close();
             }
-            catch (FormatException ex2)
+            catch (FormatException)
             {
                 MessageBox.Show("Campo Precio inválido. Ingrese solo números.");
             }
@@ -128,7 +126,7 @@ namespace TPWinForm_Gottig_Ramirez
             {
                 pictureBox1.Load(img);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 pictureBox1.Load("https://budmil.at/files/system/no_image.png");
             }

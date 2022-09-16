@@ -30,7 +30,7 @@ namespace TPWinForm_Gottig_Ramirez
                 pbxArt.Load(img);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 pbxArt.Load("https://budmil.at/files/system/no_image.png");
             }
