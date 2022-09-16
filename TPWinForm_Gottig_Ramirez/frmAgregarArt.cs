@@ -36,7 +36,7 @@ namespace TPWinForm_Gottig_Ramirez
         {
             AccesoDatos db = new AccesoDatos();
 
-            Articulo nuevo = new Articulo();
+            //Articulo nuevo = new Articulo();
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
             try
@@ -44,27 +44,27 @@ namespace TPWinForm_Gottig_Ramirez
                 if (articulo == null)
                     articulo = new Articulo();
 
-                nuevo.Codigo = tbxCodigo.Text;
-                nuevo.Nombre = tbxNombre.Text;
-                nuevo.Descripcion = tbxDesc.Text;
+                articulo.Codigo = tbxCodigo.Text;
+                articulo.Nombre = tbxNombre.Text;
+                articulo.Descripcion = tbxDesc.Text;
 
-                nuevo.Marca = new Marca();
-                nuevo.Marca = (Marca)cbxMarcas.SelectedItem;
+                articulo.Marca = new Marca();
+                articulo.Marca = (Marca)cbxMarcas.SelectedItem;
 
-                nuevo.Categoria = new Categoria();
-                nuevo.Categoria = (Categoria)cbxCategoria.SelectedItem;
+                articulo.Categoria = new Categoria();
+                articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
 
-                nuevo.ImagenUrl = tbxImagenUrl.Text;
-                nuevo.Precio = int.Parse(tbxPrecio.Text);
+                articulo.ImagenUrl = tbxImagenUrl.Text;
+                articulo.Precio = float.Parse(tbxPrecio.Text);
 
                 if(articulo.Id != 0)
                 {
-                    articuloNegocio.ModificarArticulo(nuevo);
+                    articuloNegocio.ModificarArticulo(articulo);
                     MessageBox.Show("Articulo modificado exitosamente!");
                 }
                 else
                 {
-                    articuloNegocio.AgregarArticulo(nuevo);
+                    articuloNegocio.AgregarArticulo(articulo);
                     MessageBox.Show("Articulo agregado exitosamente!");
                 }
 

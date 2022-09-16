@@ -137,6 +137,7 @@
             // 
             // cbxMarcas
             // 
+            this.cbxMarcas.DisplayMember = "Descripcion";
             this.cbxMarcas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarcas.FormattingEnabled = true;
             this.cbxMarcas.Location = new System.Drawing.Point(115, 212);
@@ -144,6 +145,7 @@
             this.cbxMarcas.Name = "cbxMarcas";
             this.cbxMarcas.Size = new System.Drawing.Size(170, 22);
             this.cbxMarcas.TabIndex = 8;
+            this.cbxMarcas.ValueMember = "ID";
             // 
             // lblCategoria
             // 
@@ -158,6 +160,7 @@
             // 
             // cbxCategoria
             // 
+            this.cbxCategoria.DisplayMember = "Descripcion";
             this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCategoria.FormattingEnabled = true;
             this.cbxCategoria.Location = new System.Drawing.Point(115, 248);
@@ -165,6 +168,7 @@
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(170, 22);
             this.cbxCategoria.TabIndex = 10;
+            this.cbxCategoria.ValueMember = "ID";
             // 
             // pictureBox1
             // 
@@ -172,7 +176,7 @@
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(307, 223);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
@@ -313,7 +317,6 @@
             this.Load += new System.EventHandler(this.frmAgregarArt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gpbVistaPrevia.ResumeLayout(false);
-            this.gpbVistaPrevia.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
