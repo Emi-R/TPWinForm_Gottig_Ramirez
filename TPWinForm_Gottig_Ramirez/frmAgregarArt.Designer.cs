@@ -221,6 +221,7 @@
             this.tbxImagenUrl.Name = "tbxImagenUrl";
             this.tbxImagenUrl.Size = new System.Drawing.Size(303, 22);
             this.tbxImagenUrl.TabIndex = 15;
+            this.tbxImagenUrl.Leave += new System.EventHandler(this.tbxImagenUrl_Leave);
             // 
             // btnCargarImg
             // 

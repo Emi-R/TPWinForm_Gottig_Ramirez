@@ -108,7 +108,7 @@ namespace TPWinForm_Gottig_Ramirez
 
                     tbxImagenUrl.Text = articulo.ImagenUrl;
                     //img tiene que ir fixed al recuadro
-                    cargarImagen(articulo.ImagenUrl.ToString());
+                    cargarImagen(articulo.ImagenUrl);
 
                     tbxPrecio.Text = articulo.Precio.ToString();
                 }
@@ -132,5 +132,9 @@ namespace TPWinForm_Gottig_Ramirez
             }
         }
 
+        private void tbxImagenUrl_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(tbxImagenUrl.Text);
+        }
     }
 }
