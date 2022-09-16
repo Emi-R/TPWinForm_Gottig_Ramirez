@@ -70,6 +70,10 @@ namespace TPWinForm_Gottig_Ramirez
 
                 this.Close();
             }
+            catch (FormatException ex2)
+            {
+                MessageBox.Show("Campo Precio inválido. Ingrese solo números.");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());

@@ -16,7 +16,7 @@ namespace Negocio
         public List<Articulo> ListarArticulos()
         {
             List<Articulo> articulos = new List<Articulo>();
-            string consulta = "SELECT A.ID AS ID, A.CODIGO AS CODIGO, A.NOMBRE AS NOMBRE, A.DESCRIPCION AS DESCRIPCION, M.ID AS IdMarca,M.Descripcion AS MARCA, C.ID AS IdCategoria, C.Descripcion AS CATEGORIA, A.IMAGENURL AS IMAGENURL, A.Precio FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id";
+            string consulta = "SELECT A.ID AS ID, A.CODIGO AS CODIGO, A.NOMBRE AS NOMBRE, A.DESCRIPCION AS DESCRIPCION, M.ID AS IdMarca,M.Descripcion AS MARCA, C.ID AS IdCategoria, C.Descripcion AS CATEGORIA, A.IMAGENURL AS IMAGENURL, A.Precio FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id";
             db.SetearConsulta(consulta);
             db.EjecutarLectura();
 
@@ -33,14 +33,19 @@ namespace Negocio
 
                     articulo.Marca = new Marca();
 
-                    //if (!(db.Reader["Marca"] is DBNull))
+                    if (!(db.Reader["MARCA"] is DBNull))
+                    {
                     articulo.Marca.ID = (int)db.Reader["IdMarca"];
                     articulo.Marca.Descripcion = (string)db.Reader["Marca"];
+                    }
 
-                    //if (!(db.Reader["Categoria"] is DBNull))
+                    if (!(db.Reader["CATEGORIA"] is DBNull))
+                    {
                     articulo.Categoria = new Categoria();
                     articulo.Categoria.ID = (int)db.Reader["IdCategoria"];
                     articulo.Categoria.Descripcion = (string)db.Reader["Categoria"];
+                    }
+
 
                     articulo.ImagenUrl = (string)db.Reader["ImagenUrl"];
                     articulo.Precio = (float)db.Reader.GetDecimal(9);
@@ -50,6 +55,7 @@ namespace Negocio
 
                 return articulos;
             }
+            
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
