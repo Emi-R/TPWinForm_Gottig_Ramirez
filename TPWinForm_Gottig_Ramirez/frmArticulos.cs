@@ -40,7 +40,6 @@ namespace TPWinForm_Gottig_Ramirez
         {
             ArticuloNegocio a = new ArticuloNegocio();
 
-
             try
             {
                 listaArt = a.ListarArticulos();
@@ -83,6 +82,37 @@ namespace TPWinForm_Gottig_Ramirez
             formModificar.ShowDialog();
 
             //aca cargar
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Articulo picked = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+            string mensaje = $"Desea eliminar el articulo {picked.Codigo}?";
+            string title = "Confirmar borrado";
+
+            DialogResult msg = MessageBox.Show(mensaje, title, buttons, MessageBoxIcon.Question);
+
+            if (msg == DialogResult.Yes)
+            {
+                ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+
+                try
+                {
+                    articuloNegocio.EliminarArticulo(picked);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    throw;
+                }
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }
