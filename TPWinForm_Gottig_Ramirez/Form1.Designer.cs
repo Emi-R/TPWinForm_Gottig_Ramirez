@@ -40,12 +40,13 @@
             this.btnArticulos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnArticulos.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArticulos.Image = ((System.Drawing.Image)(resources.GetObject("btnArticulos.Image")));
-            this.btnArticulos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnArticulos.Location = new System.Drawing.Point(84, 224);
+            this.btnArticulos.Location = new System.Drawing.Point(105, 200);
             this.btnArticulos.Name = "btnArticulos";
-            this.btnArticulos.Size = new System.Drawing.Size(149, 74);
+            this.btnArticulos.Size = new System.Drawing.Size(111, 87);
             this.btnArticulos.TabIndex = 2;
             this.btnArticulos.Text = "Articulos";
+            this.btnArticulos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnArticulos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnArticulos.UseVisualStyleBackColor = false;
             this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
             // 
