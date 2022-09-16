@@ -16,7 +16,7 @@ namespace Negocio
         public List<Articulo> ListarArticulos()
         {
             List<Articulo> articulos = new List<Articulo>();
-            string consulta = "SELECT A.ID AS ID, A.CODIGO AS CODIGO, A.NOMBRE AS NOMBRE, A.DESCRIPCION AS DESCRIPCION, M.ID AS IdMarca,M.Descripcion AS MARCA, C.ID AS IdCategoria, C.Descripcion AS CATEGORIA, A.IMAGENURL AS IMAGENURL, A.Precio FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id";
+            string consulta = "SELECT A.ID AS ID, A.CODIGO AS CODIGO, A.NOMBRE AS NOMBRE, A.DESCRIPCION AS DESCRIPCION, M.ID AS IdMarca,M.Descripcion AS MARCA, C.ID AS IdCategoria, C.Descripcion AS CATEGORIA, A.IMAGENURL AS IMAGENURL, A.Precio AS PRECIO FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id";
             db.SetearConsulta(consulta);
             db.EjecutarLectura();
 
@@ -28,13 +28,13 @@ namespace Negocio
 
                     articulo.Id = (int)db.Reader["ID"];
 
-                    if (!(db.Reader["MARCA"] is DBNull))
+                    if (!(db.Reader["Codigo"] is DBNull))
                         articulo.Codigo = (string)db.Reader["Codigo"];
 
-                    if (!(db.Reader["MARCA"] is DBNull))
+                    if (!(db.Reader["Nombre"] is DBNull))
                         articulo.Nombre = (string)db.Reader["Nombre"];
 
-                    if (!(db.Reader["MARCA"] is DBNull))
+                    if (!(db.Reader["Descripcion"] is DBNull))
                         articulo.Descripcion = (string)db.Reader["Descripcion"];
 
                     articulo.Marca = new Marca();
@@ -52,10 +52,10 @@ namespace Negocio
                         articulo.Categoria.Descripcion = (string)db.Reader["Categoria"];
                     }
 
-                    if (!(db.Reader["MARCA"] is DBNull))
+                    if (!(db.Reader["ImagenUrl"] is DBNull))
                         articulo.ImagenUrl = (string)db.Reader["ImagenUrl"];
 
-                    if (!(db.Reader["MARCA"] is DBNull))
+                    if (!(db.Reader["Precio"] is DBNull))
                         articulo.Precio = (float)db.Reader.GetDecimal(9);
 
                     articulos.Add(articulo);
