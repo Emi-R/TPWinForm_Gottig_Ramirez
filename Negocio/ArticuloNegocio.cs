@@ -26,10 +26,17 @@ namespace Negocio
                 {
                     Articulo articulo = new Articulo();
 
-                    articulo.Id = (int)db.Reader["ID"];
-                    articulo.Codigo = (string)db.Reader["Codigo"];
-                    articulo.Nombre = (string)db.Reader["Nombre"];
-                    articulo.Descripcion = (string)db.Reader["Descripcion"];
+                    if (!(db.Reader["MARCA"] is DBNull))
+                        articulo.Id = (int)db.Reader["ID"];
+
+                    if (!(db.Reader["MARCA"] is DBNull))
+                        articulo.Codigo = (string)db.Reader["Codigo"];
+
+                    if (!(db.Reader["MARCA"] is DBNull))
+                        articulo.Nombre = (string)db.Reader["Nombre"];
+
+                    if (!(db.Reader["MARCA"] is DBNull))
+                        articulo.Descripcion = (string)db.Reader["Descripcion"];
 
                     articulo.Marca = new Marca();
 
@@ -46,9 +53,11 @@ namespace Negocio
                         articulo.Categoria.Descripcion = (string)db.Reader["Categoria"];
                     }
 
+                    if (!(db.Reader["MARCA"] is DBNull))
+                        articulo.ImagenUrl = (string)db.Reader["ImagenUrl"];
 
-                    articulo.ImagenUrl = (string)db.Reader["ImagenUrl"];
-                    articulo.Precio = (float)db.Reader.GetDecimal(9);
+                    if (!(db.Reader["MARCA"] is DBNull))
+                        articulo.Precio = (float)db.Reader.GetDecimal(9);
 
                     articulos.Add(articulo);
                 }
@@ -72,10 +81,11 @@ namespace Negocio
         {
             try
             {
-                db.SetearParametro("@IdMarca", nuevo.Marca.ID);
-                db.SetearParametro("@IdCategoria", nuevo.Categoria.ID);
 
                 string Consulta = $"Insert Into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) Values ('{nuevo.Codigo}', '{nuevo.Nombre}', '{nuevo.Descripcion}', @IdMarca, @IdCategoria, '{nuevo.ImagenUrl}',  {nuevo.Precio})";
+
+                db.SetearParametro("@IdMarca", nuevo.Marca.ID);
+                db.SetearParametro("@IdCategoria", nuevo.Categoria.ID);
 
                 db.SetearConsulta(Consulta);
                 db.EjecutarAccion();

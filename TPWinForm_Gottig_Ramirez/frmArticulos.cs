@@ -32,7 +32,7 @@ namespace TPWinForm_Gottig_Ramirez
             }
             catch (Exception)
             {
-                pbxArt.Load("https://budmil.at/files/system/no_image.png");
+                pbxArt.Load("https://media.istockphoto.com/vectors/no-image-vector-symbol-missing-available-icon-no-gallery-for-this-vector-id1128826884?k=20&m=1128826884&s=170667a&w=0&h=_cx7HW9R4Uc_OLLxg2PcRXno4KERpYLi5vCz-NEyhi0=");
             }
         }
 
