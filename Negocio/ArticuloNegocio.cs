@@ -26,8 +26,7 @@ namespace Negocio
                 {
                     Articulo articulo = new Articulo();
 
-                    if (!(db.Reader["MARCA"] is DBNull))
-                        articulo.Id = (int)db.Reader["ID"];
+                    articulo.Id = (int)db.Reader["ID"];
 
                     if (!(db.Reader["MARCA"] is DBNull))
                         articulo.Codigo = (string)db.Reader["Codigo"];
