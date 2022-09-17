@@ -165,6 +165,17 @@ namespace TPWinForm_Gottig_Ramirez
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltroRapido;
 
+            if(dgvArticulos.CurrentRow == null)
+            {
+                btnModificarArt.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                btnModificarArt.Enabled = true;
+                btnEliminar.Enabled = true;
+            }
+
             ocultarColumnas();
         }
 
@@ -239,8 +250,10 @@ namespace TPWinForm_Gottig_Ramirez
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            
             updateGrilla();
             txtFiltro.Clear();
+            tbxFiltroRapido.Clear();
         }
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
