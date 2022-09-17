@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArticulos));
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.lblTituloArt = new System.Windows.Forms.Label();
@@ -47,11 +47,16 @@
             this.tbxFiltroRapido = new System.Windows.Forms.TextBox();
             this.cbxCampo = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.lblFiltro = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.lblCriterio = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxCriterio = new System.Windows.Forms.ComboBox();
             this.lblCampo = new System.Windows.Forms.Label();
+            this.rbtAsc = new System.Windows.Forms.RadioButton();
+            this.rbtDesc = new System.Windows.Forms.RadioButton();
+            this.rbtNoOrd = new System.Windows.Forms.RadioButton();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gbxImagen.SuspendLayout();
@@ -69,27 +74,27 @@
             this.dgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvArticulos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.NullValue = "N/A";
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.NullValue = "N/A";
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvArticulos.ColumnHeadersHeight = 34;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvArticulos.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SpringGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle6.NullValue = "N/A";
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SpringGreen;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle10.NullValue = "N/A";
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.EnableHeadersVisualStyles = false;
             this.dgvArticulos.GridColor = System.Drawing.Color.DarkSlateGray;
@@ -99,24 +104,24 @@
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DarkKhaki;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.NullValue = "N/A";
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DarkKhaki;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.NullValue = "N/A";
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulos.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvArticulos.RowHeadersVisible = false;
             this.dgvArticulos.RowHeadersWidth = 62;
             this.dgvArticulos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.NullValue = "N/A";
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvArticulos.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.NullValue = "N/A";
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvArticulos.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvArticulos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.dgvArticulos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvArticulos.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
@@ -134,7 +139,7 @@
             this.lblTituloArt.AutoSize = true;
             this.lblTituloArt.Font = new System.Drawing.Font("Corbel", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloArt.Location = new System.Drawing.Point(173, 48);
-            this.lblTituloArt.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.lblTituloArt.Margin = new System.Windows.Forms.Padding(9);
             this.lblTituloArt.Name = "lblTituloArt";
             this.lblTituloArt.Size = new System.Drawing.Size(161, 45);
             this.lblTituloArt.TabIndex = 1;
@@ -226,7 +231,7 @@
             this.btnModificarArt.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarArt.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarArt.Image")));
             this.btnModificarArt.Location = new System.Drawing.Point(29, 249);
-            this.btnModificarArt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificarArt.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarArt.Name = "btnModificarArt";
             this.btnModificarArt.Size = new System.Drawing.Size(118, 69);
             this.btnModificarArt.TabIndex = 6;
@@ -264,13 +269,13 @@
             this.groupBox1.Size = new System.Drawing.Size(418, 47);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtro Rápido (Codigo o Nombre)";
+            this.groupBox1.Text = "Filtro Rápido (Nombre)";
             // 
             // tbxFiltroRapido
             // 
             this.tbxFiltroRapido.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxFiltroRapido.Location = new System.Drawing.Point(5, 20);
-            this.tbxFiltroRapido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxFiltroRapido.Margin = new System.Windows.Forms.Padding(2);
             this.tbxFiltroRapido.Name = "tbxFiltroRapido";
             this.tbxFiltroRapido.Size = new System.Drawing.Size(408, 23);
             this.tbxFiltroRapido.TabIndex = 0;
@@ -278,83 +283,143 @@
             // 
             // cbxCampo
             // 
+            this.cbxCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxCampo.FormattingEnabled = true;
-            this.cbxCampo.Location = new System.Drawing.Point(16, 43);
+            this.cbxCampo.Location = new System.Drawing.Point(16, 52);
             this.cbxCampo.Name = "cbxCampo";
             this.cbxCampo.Size = new System.Drawing.Size(138, 21);
             this.cbxCampo.TabIndex = 9;
-            this.cbxCampo.SelectedIndexChanged += new System.EventHandler(this.cbxCampo_SelectedIndexChanged);
+            this.cbxCampo.SelectedIndexChanged += new System.EventHandler(this.cbxCampo_SelectedIndexChanged_1);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnReset);
+            this.groupBox2.Controls.Add(this.rbtNoOrd);
+            this.groupBox2.Controls.Add(this.rbtDesc);
+            this.groupBox2.Controls.Add(this.rbtAsc);
+            this.groupBox2.Controls.Add(this.btnFiltrar);
             this.groupBox2.Controls.Add(this.lblFiltro);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtFiltro);
             this.groupBox2.Controls.Add(this.lblCriterio);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cbxCriterio);
             this.groupBox2.Controls.Add(this.lblCampo);
             this.groupBox2.Controls.Add(this.cbxCampo);
             this.groupBox2.Font = new System.Drawing.Font("Candara", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(173, 471);
+            this.groupBox2.Location = new System.Drawing.Point(29, 454);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(602, 79);
+            this.groupBox2.Size = new System.Drawing.Size(746, 96);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtro Avanzado";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.Location = new System.Drawing.Point(651, 22);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(85, 23);
+            this.btnFiltrar.TabIndex = 1;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltro.Location = new System.Drawing.Point(354, 23);
+            this.lblFiltro.Location = new System.Drawing.Point(333, 30);
             this.lblFiltro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(33, 14);
             this.lblFiltro.TabIndex = 14;
             this.lblFiltro.Text = "Filtro";
             // 
-            // textBox1
+            // txtFiltro
             // 
-            this.textBox1.Location = new System.Drawing.Point(357, 43);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 23);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtFiltro.Location = new System.Drawing.Point(336, 51);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(138, 23);
+            this.txtFiltro.TabIndex = 13;
             // 
             // lblCriterio
             // 
             this.lblCriterio.AutoSize = true;
             this.lblCriterio.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCriterio.Location = new System.Drawing.Point(184, 23);
+            this.lblCriterio.Location = new System.Drawing.Point(173, 30);
             this.lblCriterio.Name = "lblCriterio";
             this.lblCriterio.Size = new System.Drawing.Size(44, 14);
             this.lblCriterio.TabIndex = 10;
             this.lblCriterio.Text = "Criterio";
-            this.lblCriterio.Click += new System.EventHandler(this.lblCriterio_Click);
             // 
-            // comboBox1
+            // cbxCriterio
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(187, 43);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(138, 21);
-            this.comboBox1.TabIndex = 11;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbxCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCriterio.FormattingEnabled = true;
+            this.cbxCriterio.Location = new System.Drawing.Point(176, 52);
+            this.cbxCriterio.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxCriterio.Name = "cbxCriterio";
+            this.cbxCriterio.Size = new System.Drawing.Size(138, 21);
+            this.cbxCriterio.TabIndex = 11;
             // 
             // lblCampo
             // 
             this.lblCampo.AutoSize = true;
             this.lblCampo.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCampo.Location = new System.Drawing.Point(13, 23);
+            this.lblCampo.Location = new System.Drawing.Point(13, 30);
             this.lblCampo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCampo.Name = "lblCampo";
             this.lblCampo.Size = new System.Drawing.Size(42, 14);
             this.lblCampo.TabIndex = 10;
             this.lblCampo.Text = "Campo";
+            // 
+            // rbtAsc
+            // 
+            this.rbtAsc.AutoSize = true;
+            this.rbtAsc.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtAsc.Location = new System.Drawing.Point(489, 20);
+            this.rbtAsc.Name = "rbtAsc";
+            this.rbtAsc.Size = new System.Drawing.Size(140, 18);
+            this.rbtAsc.TabIndex = 15;
+            this.rbtAsc.Text = "Ordenado Ascendente";
+            this.rbtAsc.UseVisualStyleBackColor = true;
+            // 
+            // rbtDesc
+            // 
+            this.rbtDesc.AutoSize = true;
+            this.rbtDesc.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtDesc.Location = new System.Drawing.Point(489, 45);
+            this.rbtDesc.Name = "rbtDesc";
+            this.rbtDesc.Size = new System.Drawing.Size(147, 18);
+            this.rbtDesc.TabIndex = 16;
+            this.rbtDesc.Text = "Ordenado Descendente";
+            this.rbtDesc.UseVisualStyleBackColor = true;
+            // 
+            // rbtNoOrd
+            // 
+            this.rbtNoOrd.AutoSize = true;
+            this.rbtNoOrd.Checked = true;
+            this.rbtNoOrd.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtNoOrd.Location = new System.Drawing.Point(489, 69);
+            this.rbtNoOrd.Name = "rbtNoOrd";
+            this.rbtNoOrd.Size = new System.Drawing.Size(86, 18);
+            this.rbtNoOrd.TabIndex = 17;
+            this.rbtNoOrd.TabStop = true;
+            this.rbtNoOrd.Text = "Sin Ordenar";
+            this.rbtNoOrd.UseVisualStyleBackColor = true;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(651, 63);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(85, 23);
+            this.btnReset.TabIndex = 18;
+            this.btnReset.Text = "Reiniciar";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // frmArticulos
             // 
@@ -409,12 +474,16 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbxCampo;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbxFiltroRapido;
         private System.Windows.Forms.Label lblCampo;
         private System.Windows.Forms.Label lblCriterio;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxCriterio;
         private System.Windows.Forms.Label lblFiltro;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.RadioButton rbtAsc;
+        private System.Windows.Forms.RadioButton rbtNoOrd;
+        private System.Windows.Forms.RadioButton rbtDesc;
+        private System.Windows.Forms.Button btnReset;
     }
 }

@@ -64,10 +64,15 @@ namespace TPWinForm_Gottig_Ramirez
             //TODO: Poner Precio debajo de la imagen
             updateGrilla();
 
+            cbxCampo.Items.Add("Código");
             cbxCampo.Items.Add("Nombre");
             cbxCampo.Items.Add("Marca");
             cbxCampo.Items.Add("Categoría");
             cbxCampo.Items.Add("Precio");
+
+            cbxCampo.SelectedIndex = 0;
+
+            cbxCriterio.SelectedIndex = 0;
 
         }
 
@@ -141,11 +146,6 @@ namespace TPWinForm_Gottig_Ramirez
             }
         }
 
-        private void lblTituloArt_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tbxFiltroRapido_TextChanged(object sender, EventArgs e)
         {
             List<Articulo> listaFiltroRapido;
@@ -153,7 +153,7 @@ namespace TPWinForm_Gottig_Ramirez
 
             if (filtro.Length >= 3)
             {
-                listaFiltroRapido = listaArt.FindAll(a => a.Nombre.ToUpper().Contains(tbxFiltroRapido.Text.ToUpper()) || a.Codigo.ToUpper().Contains(tbxFiltroRapido.Text.ToUpper()));
+                listaFiltroRapido = listaArt.FindAll(a => a.Nombre.ToUpper().Contains(tbxFiltroRapido.Text.ToUpper()));
             }
             else
             {
@@ -166,34 +166,71 @@ namespace TPWinForm_Gottig_Ramirez
             ocultarColumnas();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void cbxCampo_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            string opc = cbxCampo.SelectedItem.ToString();
 
+            switch (opc)
+            {
+                case "Código":
+                case "Nombre":
+                case "Marca":
+                case "Categoría":
+                    cbxCriterio.Items.Clear();
+                    cbxCriterio.Items.Add("Comienza con");
+                    cbxCriterio.Items.Add("Contiene");
+                    cbxCriterio.Items.Add("Finaliza con");
+                    break;
+                case "Precio":
+                    cbxCriterio.Items.Clear();
+                    cbxCriterio.Items.Add("Menor a");
+                    cbxCriterio.Items.Add("Igual a");
+                    cbxCriterio.Items.Add("Mayor a");
+                    break;
+            }
+
+            cbxCriterio.SelectedIndex = 0;
         }
 
-        private void lblCriterio_Click(object sender, EventArgs e)
+        private void btnFiltrar_Click(object sender, EventArgs e)
         {
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
+            try
+            {
+                if(txtFiltro.Text == "")
+                {
+                    MessageBox.Show("Campo filtro esta vacio.");
+                    return;
+                }
+
+                string campo = cbxCampo.SelectedItem.ToString();
+                string criterio = cbxCriterio.SelectedItem.ToString();
+                string filtro = txtFiltro.Text;
+
+                int ordenarPor = 0;
+
+                if (rbtAsc.Checked == true)
+                    ordenarPor = 2;
+
+                if (rbtDesc.Checked == true)
+                    ordenarPor = 1;
+
+                dgvArticulos.DataSource = articuloNegocio.Filtrar(campo, criterio, filtro, ordenarPor);
+                ocultarColumnas();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void cbxCampo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            updateGrilla();
+            txtFiltro.Clear();
         }
     }
 }
