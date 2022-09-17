@@ -64,6 +64,7 @@ namespace TPWinForm_Gottig_Ramirez
             //TODO: Poner Precio debajo de la imagen
             updateGrilla();
 
+            cbxCampo.Items.Add("Código");
             cbxCampo.Items.Add("Nombre");
             cbxCampo.Items.Add("Marca");
             cbxCampo.Items.Add("Categoría");
@@ -153,7 +154,7 @@ namespace TPWinForm_Gottig_Ramirez
 
             if (filtro.Length >= 3)
             {
-                listaFiltroRapido = listaArt.FindAll(a => a.Nombre.ToUpper().Contains(tbxFiltroRapido.Text.ToUpper()) || a.Codigo.ToUpper().Contains(tbxFiltroRapido.Text.ToUpper()));
+                listaFiltroRapido = listaArt.FindAll(a => a.Nombre.ToUpper().Contains(tbxFiltroRapido.Text.ToUpper()));
             }
             else
             {
