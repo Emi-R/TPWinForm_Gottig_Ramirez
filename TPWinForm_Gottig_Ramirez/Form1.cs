@@ -22,5 +22,11 @@ namespace TPWinForm_Gottig_Ramirez
             frmArticulos VentanaArt = new frmArticulos();
             VentanaArt.ShowDialog();
         }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            frmCategorias ventanaCategorias = new frmCategorias();
+            ventanaCategorias.ShowDialog();
+        }
     }
 }

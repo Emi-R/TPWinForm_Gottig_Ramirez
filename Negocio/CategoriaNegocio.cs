@@ -10,7 +10,7 @@ namespace Negocio
 {
     public class CategoriaNegocio
     {
-        AccesoDatos db = new AccesoDatos();
+        private AccesoDatos db = new AccesoDatos();
 
         public List<Categoria> listar()
         {
@@ -43,6 +43,60 @@ namespace Negocio
             }
 
             return lista;
+        }
+
+        public void AgregarCategoria(Categoria nueva)
+        {
+            try
+            {
+                string accion = $"INSERT INTO CATEGORIAS (Descripcion) VALUES ({nueva.Descripcion})";
+                db.SetearConsulta(accion);
+                db.EjecutarAccion();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+        }
+
+        public void ModificarCategoria(Categoria modificar)
+        {
+            try
+            {
+                string accion = $"UPDATE CATEGORIAS SET DESCRIPCION = '{modificar.Descripcion}' WHERE ID = {modificar.ID} ";
+                db.SetearConsulta(accion);
+                db.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+        }
+
+        public void EliminarCategoria(Categoria eliminar)
+        {
+            try
+            {
+                string accion = $"DELETE FROM CATEGORIAS WHERE ID = {eliminar.ID}";
+                db.SetearConsulta(accion);
+                db.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
         }
     }
 }
