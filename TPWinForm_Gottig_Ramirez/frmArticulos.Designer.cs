@@ -46,7 +46,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbxCampo = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblCriterio = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblCampo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gbxImagen.SuspendLayout();
@@ -133,7 +137,6 @@
             this.lblTituloArt.Size = new System.Drawing.Size(161, 45);
             this.lblTituloArt.TabIndex = 1;
             this.lblTituloArt.Text = "Articulos";
-            this.lblTituloArt.Click += new System.EventHandler(this.lblTituloArt_Click);
             // 
             // menuStrip1
             // 
@@ -252,6 +255,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(357, 52);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(418, 40);
@@ -264,13 +268,18 @@
             this.cbxCampo.FormattingEnabled = true;
             this.cbxCampo.Location = new System.Drawing.Point(29, 43);
             this.cbxCampo.Name = "cbxCampo";
-            this.cbxCampo.Size = new System.Drawing.Size(158, 21);
+            this.cbxCampo.Size = new System.Drawing.Size(158, 22);
             this.cbxCampo.TabIndex = 9;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.lblFiltro);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.lblCriterio);
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.lblCampo);
             this.groupBox2.Controls.Add(this.cbxCampo);
+            this.groupBox2.Font = new System.Drawing.Font("Candara", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(173, 471);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(602, 79);
@@ -278,14 +287,50 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtro Avanzado";
             // 
-            // label1
+            // lblFiltro
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "label1";
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Font = new System.Drawing.Font("Corbel", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.Location = new System.Drawing.Point(390, 23);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(33, 14);
+            this.lblFiltro.TabIndex = 14;
+            this.lblFiltro.Text = "Filtro";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(393, 43);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(172, 22);
+            this.textBox1.TabIndex = 13;
+            // 
+            // lblCriterio
+            // 
+            this.lblCriterio.AutoSize = true;
+            this.lblCriterio.Font = new System.Drawing.Font("Corbel", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCriterio.Location = new System.Drawing.Point(214, 23);
+            this.lblCriterio.Name = "lblCriterio";
+            this.lblCriterio.Size = new System.Drawing.Size(43, 14);
+            this.lblCriterio.TabIndex = 12;
+            this.lblCriterio.Text = "Criterio";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(217, 43);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(154, 22);
+            this.comboBox1.TabIndex = 11;
+            // 
+            // lblCampo
+            // 
+            this.lblCampo.AutoSize = true;
+            this.lblCampo.Font = new System.Drawing.Font("Corbel", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCampo.Location = new System.Drawing.Point(26, 23);
+            this.lblCampo.Name = "lblCampo";
+            this.lblCampo.Size = new System.Drawing.Size(41, 14);
+            this.lblCampo.TabIndex = 10;
+            this.lblCampo.Text = "Campo";
             // 
             // frmArticulos
             // 
@@ -338,6 +383,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbxCampo;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCampo;
+        private System.Windows.Forms.Label lblCriterio;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -58,9 +58,14 @@ namespace TPWinForm_Gottig_Ramirez
 
         private void frmArticulos_Load(object sender, EventArgs e)
         {
+            //TODO: Poner Precio debajo de la imagen
             updateGrilla();
 
-            //TODO: Poner Precio debajo de la imagen
+            cbxCampo.Items.Add("Nombre");
+            cbxCampo.Items.Add("Marca");
+            cbxCampo.Items.Add("Categoría");
+            cbxCampo.Items.Add("Precio");
+
         }
 
 
@@ -131,9 +136,5 @@ namespace TPWinForm_Gottig_Ramirez
             cargarImagen(picked.ImagenUrl);
         }
 
-        private void lblTituloArt_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
