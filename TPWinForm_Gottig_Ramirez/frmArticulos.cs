@@ -44,9 +44,7 @@ namespace TPWinForm_Gottig_Ramirez
             {
                 listaArt = a.ListarArticulos();
                 dgvArticulos.DataSource = listaArt;
-                dgvArticulos.Columns["ImagenUrl"].Visible = false;
-                dgvArticulos.Columns["Id"].Visible = false;
-
+                ocultarColumnas();
                 cargarImagen(listaArt[0].ImagenUrl);
             }
             catch (Exception ex)
@@ -56,6 +54,11 @@ namespace TPWinForm_Gottig_Ramirez
             }
         }
 
+        private void ocultarColumnas()
+        {
+            dgvArticulos.Columns["ImagenUrl"].Visible = false;
+            dgvArticulos.Columns["Id"].Visible = false;
+        }
         private void frmArticulos_Load(object sender, EventArgs e)
         {
             //TODO: Poner Precio debajo de la imagen
@@ -131,10 +134,36 @@ namespace TPWinForm_Gottig_Ramirez
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo picked = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-
-            cargarImagen(picked.ImagenUrl);
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo picked = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(picked.ImagenUrl);
+            }
         }
 
+        private void lblTituloArt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxFiltroRapido_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltroRapido;
+            string filtro = tbxFiltroRapido.Text;
+
+            if (filtro.Length >= 3)
+            {
+                listaFiltroRapido = listaArt.FindAll(a => a.Nombre.ToUpper().Contains(tbxFiltroRapido.Text.ToUpper()) || a.Codigo.ToUpper().Contains(tbxFiltroRapido.Text.ToUpper()));
+            }
+            else
+            {
+                listaFiltroRapido = listaArt;
+            }
+
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltroRapido;
+
+            ocultarColumnas();
+        }
     }
 }
