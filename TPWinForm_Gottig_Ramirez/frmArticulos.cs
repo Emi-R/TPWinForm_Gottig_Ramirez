@@ -59,6 +59,8 @@ namespace TPWinForm_Gottig_Ramirez
         private void frmArticulos_Load(object sender, EventArgs e)
         {
             updateGrilla();
+
+            //TODO: Poner Precio debajo de la imagen
         }
 
 
@@ -129,6 +131,9 @@ namespace TPWinForm_Gottig_Ramirez
             cargarImagen(picked.ImagenUrl);
         }
 
+        private void lblTituloArt_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
