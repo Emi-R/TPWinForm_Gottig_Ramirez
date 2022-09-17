@@ -98,6 +98,15 @@ namespace TPWinForm_Gottig_Ramirez
                 frmAgregarArt formModificar = new frmAgregarArt(articulo);
                 formModificar.ShowDialog();
             }
+            else
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+                string mensaje = $"No ha seleccionado ningun articulo";
+                string title = "Atencion!";
+
+                MessageBox.Show(mensaje, title, buttons, MessageBoxIcon.Exclamation);
+            }
             updateGrilla();
 
         }
