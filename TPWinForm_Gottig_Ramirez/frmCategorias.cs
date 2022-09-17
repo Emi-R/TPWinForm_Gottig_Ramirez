@@ -111,7 +111,8 @@ namespace TPWinForm_Gottig_Ramirez
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            frmAgregarCategoria frmAgregarArt = new frmAgregarCategoria();
+            Categoria modificarCat = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+            frmAgregarCategoria frmAgregarArt = new frmAgregarCategoria(modificarCat);
             frmAgregarArt.ShowDialog();
             updateGrilla();
         }

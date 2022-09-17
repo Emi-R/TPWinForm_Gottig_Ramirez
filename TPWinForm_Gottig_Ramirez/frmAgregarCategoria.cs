@@ -23,12 +23,14 @@ namespace TPWinForm_Gottig_Ramirez
         public frmAgregarCategoria(Categoria categoria)
         {
             this.categoria = categoria;
+            
             InitializeComponent();
-            Text = $"Categoria: {categoria.Descripcion}";
+            
         }
         private void frmAgregarCategoria_Load(object sender, EventArgs e)
         {
             btnAgregar.Text = "Modificar categoria";
+            lblCategorias.Text = $"Categoria: {categoria.Descripcion}";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
