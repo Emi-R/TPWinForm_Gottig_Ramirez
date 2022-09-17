@@ -30,6 +30,8 @@ namespace TPWinForm_Gottig_Ramirez
         private void frmAgregarCategoria_Load(object sender, EventArgs e)
         {
             btnAgregar.Text = "Modificar categoria";
+
+            //TODO: Checkear si es NULL para agregar/modificar
             lblCategorias.Text = $"Categoria: {categoria.Descripcion}";
         }
 
