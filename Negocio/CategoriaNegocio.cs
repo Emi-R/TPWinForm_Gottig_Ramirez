@@ -50,7 +50,7 @@ namespace Negocio
         {
             try
             {
-                string accion = $"INSERT INTO CATEGORIAS (Descripcion) VALUES ({nueva.Descripcion})";
+                string accion = $"INSERT INTO CATEGORIAS (Descripcion) VALUES ('{nueva.Descripcion}')";
 
                 db.SetearConsulta(accion);
                 db.EjecutarAccion();

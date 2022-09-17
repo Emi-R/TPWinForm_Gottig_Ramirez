@@ -15,6 +15,7 @@ namespace TPWinForm_Gottig_Ramirez
     public partial class frmAgregarCategoria : Form
     {
         private Categoria categoria = null;
+        private CategoriaNegocio negocio = new CategoriaNegocio();
 
         public frmAgregarCategoria()
         {
@@ -40,6 +41,32 @@ namespace TPWinForm_Gottig_Ramirez
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (categoria == null) categoria = new Categoria();
+                categoria.Descripcion = tbxDescripcion.Text;
+
+                if(categoria.ID != 0)
+                {
+                    negocio.ModificarCategoria(categoria);
+                    MessageBox.Show("Categoria modificada exitosamente!");
+                }
+                else
+                {
+                    negocio.AgregarCategoria(categoria);
+                    MessageBox.Show("Categoria agregada exitosamente!");
+                }
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
         }
     }
 }
