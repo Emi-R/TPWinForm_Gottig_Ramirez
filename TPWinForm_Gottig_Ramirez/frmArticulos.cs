@@ -92,10 +92,12 @@ namespace TPWinForm_Gottig_Ramirez
 
         private void btnModificarArt_Click(object sender, EventArgs e)
         {
-
-            Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            frmAgregarArt formModificar = new frmAgregarArt(articulo);
-            formModificar.ShowDialog();
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                frmAgregarArt formModificar = new frmAgregarArt(articulo);
+                formModificar.ShowDialog();
+            }
             updateGrilla();
 
         }
@@ -306,7 +308,7 @@ namespace TPWinForm_Gottig_Ramirez
                 tbxInicio.Visible = true;
                 tbxFin.Visible = true;
                 lblY.Visible = true;
-                
+
             }
             else
             {

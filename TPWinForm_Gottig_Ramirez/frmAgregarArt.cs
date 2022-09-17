@@ -155,7 +155,10 @@ namespace TPWinForm_Gottig_Ramirez
                     tbxDesc.Text = articulo.Descripcion;
 
                     //falta arreglar 
+                    if(articulo.Categoria!= null)
                     cbxCategoria.SelectedValue = articulo.Categoria.ID;
+
+                    if(articulo.Marca != null)
                     cbxMarcas.SelectedValue = articulo.Marca.ID;
 
                     tbxImagenUrl.Text = articulo.ImagenUrl;
