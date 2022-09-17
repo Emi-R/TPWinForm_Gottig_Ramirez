@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArticulos));
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.lblTituloArt = new System.Windows.Forms.Label();
@@ -47,16 +47,16 @@
             this.tbxFiltroRapido = new System.Windows.Forms.TextBox();
             this.cbxCampo = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.rbtNoOrd = new System.Windows.Forms.RadioButton();
+            this.rbtDesc = new System.Windows.Forms.RadioButton();
+            this.rbtAsc = new System.Windows.Forms.RadioButton();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.lblCriterio = new System.Windows.Forms.Label();
             this.cbxCriterio = new System.Windows.Forms.ComboBox();
             this.lblCampo = new System.Windows.Forms.Label();
-            this.rbtAsc = new System.Windows.Forms.RadioButton();
-            this.rbtDesc = new System.Windows.Forms.RadioButton();
-            this.rbtNoOrd = new System.Windows.Forms.RadioButton();
-            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gbxImagen.SuspendLayout();
@@ -74,27 +74,27 @@
             this.dgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvArticulos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.NullValue = "N/A";
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.NullValue = "N/A";
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvArticulos.ColumnHeadersHeight = 34;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvArticulos.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SpringGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle10.NullValue = "N/A";
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SpringGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle6.NullValue = "N/A";
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.EnableHeadersVisualStyles = false;
             this.dgvArticulos.GridColor = System.Drawing.Color.DarkSlateGray;
@@ -104,24 +104,24 @@
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DarkKhaki;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.NullValue = "N/A";
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulos.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DarkKhaki;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.NullValue = "N/A";
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvArticulos.RowHeadersVisible = false;
             this.dgvArticulos.RowHeadersWidth = 62;
             this.dgvArticulos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.NullValue = "N/A";
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvArticulos.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.NullValue = "N/A";
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvArticulos.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvArticulos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.dgvArticulos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvArticulos.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
@@ -169,7 +169,7 @@
             this.btnAgregarArt.BackColor = System.Drawing.Color.Honeydew;
             this.btnAgregarArt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarArt.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen;
-            this.btnAgregarArt.FlatAppearance.BorderSize = 3;
+            this.btnAgregarArt.FlatAppearance.BorderSize = 2;
             this.btnAgregarArt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarArt.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarArt.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarArt.Image")));
@@ -207,7 +207,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.Azure;
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
-            this.btnVolver.FlatAppearance.BorderSize = 3;
+            this.btnVolver.FlatAppearance.BorderSize = 2;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Image = ((System.Drawing.Image)(resources.GetObject("btnVolver.Image")));
@@ -226,7 +226,7 @@
             this.btnModificarArt.BackColor = System.Drawing.Color.AliceBlue;
             this.btnModificarArt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificarArt.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnModificarArt.FlatAppearance.BorderSize = 3;
+            this.btnModificarArt.FlatAppearance.BorderSize = 2;
             this.btnModificarArt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarArt.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarArt.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarArt.Image")));
@@ -246,7 +246,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
-            this.btnEliminar.FlatAppearance.BorderSize = 3;
+            this.btnEliminar.FlatAppearance.BorderSize = 2;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
@@ -274,7 +274,7 @@
             // tbxFiltroRapido
             // 
             this.tbxFiltroRapido.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxFiltroRapido.Location = new System.Drawing.Point(5, 20);
+            this.tbxFiltroRapido.Location = new System.Drawing.Point(5, 17);
             this.tbxFiltroRapido.Margin = new System.Windows.Forms.Padding(2);
             this.tbxFiltroRapido.Name = "tbxFiltroRapido";
             this.tbxFiltroRapido.Size = new System.Drawing.Size(408, 23);
@@ -312,6 +312,52 @@
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtro Avanzado";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(651, 63);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(85, 23);
+            this.btnReset.TabIndex = 18;
+            this.btnReset.Text = "Reiniciar";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // rbtNoOrd
+            // 
+            this.rbtNoOrd.AutoSize = true;
+            this.rbtNoOrd.Checked = true;
+            this.rbtNoOrd.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtNoOrd.Location = new System.Drawing.Point(489, 69);
+            this.rbtNoOrd.Name = "rbtNoOrd";
+            this.rbtNoOrd.Size = new System.Drawing.Size(86, 18);
+            this.rbtNoOrd.TabIndex = 17;
+            this.rbtNoOrd.TabStop = true;
+            this.rbtNoOrd.Text = "Sin Ordenar";
+            this.rbtNoOrd.UseVisualStyleBackColor = true;
+            // 
+            // rbtDesc
+            // 
+            this.rbtDesc.AutoSize = true;
+            this.rbtDesc.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtDesc.Location = new System.Drawing.Point(489, 45);
+            this.rbtDesc.Name = "rbtDesc";
+            this.rbtDesc.Size = new System.Drawing.Size(147, 18);
+            this.rbtDesc.TabIndex = 16;
+            this.rbtDesc.Text = "Ordenado Descendente";
+            this.rbtDesc.UseVisualStyleBackColor = true;
+            // 
+            // rbtAsc
+            // 
+            this.rbtAsc.AutoSize = true;
+            this.rbtAsc.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtAsc.Location = new System.Drawing.Point(489, 20);
+            this.rbtAsc.Name = "rbtAsc";
+            this.rbtAsc.Size = new System.Drawing.Size(140, 18);
+            this.rbtAsc.TabIndex = 15;
+            this.rbtAsc.Text = "Ordenado Ascendente";
+            this.rbtAsc.UseVisualStyleBackColor = true;
             // 
             // btnFiltrar
             // 
@@ -374,52 +420,6 @@
             this.lblCampo.Size = new System.Drawing.Size(42, 14);
             this.lblCampo.TabIndex = 10;
             this.lblCampo.Text = "Campo";
-            // 
-            // rbtAsc
-            // 
-            this.rbtAsc.AutoSize = true;
-            this.rbtAsc.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtAsc.Location = new System.Drawing.Point(489, 20);
-            this.rbtAsc.Name = "rbtAsc";
-            this.rbtAsc.Size = new System.Drawing.Size(140, 18);
-            this.rbtAsc.TabIndex = 15;
-            this.rbtAsc.Text = "Ordenado Ascendente";
-            this.rbtAsc.UseVisualStyleBackColor = true;
-            // 
-            // rbtDesc
-            // 
-            this.rbtDesc.AutoSize = true;
-            this.rbtDesc.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtDesc.Location = new System.Drawing.Point(489, 45);
-            this.rbtDesc.Name = "rbtDesc";
-            this.rbtDesc.Size = new System.Drawing.Size(147, 18);
-            this.rbtDesc.TabIndex = 16;
-            this.rbtDesc.Text = "Ordenado Descendente";
-            this.rbtDesc.UseVisualStyleBackColor = true;
-            // 
-            // rbtNoOrd
-            // 
-            this.rbtNoOrd.AutoSize = true;
-            this.rbtNoOrd.Checked = true;
-            this.rbtNoOrd.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtNoOrd.Location = new System.Drawing.Point(489, 69);
-            this.rbtNoOrd.Name = "rbtNoOrd";
-            this.rbtNoOrd.Size = new System.Drawing.Size(86, 18);
-            this.rbtNoOrd.TabIndex = 17;
-            this.rbtNoOrd.TabStop = true;
-            this.rbtNoOrd.Text = "Sin Ordenar";
-            this.rbtNoOrd.UseVisualStyleBackColor = true;
-            // 
-            // btnReset
-            // 
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(651, 63);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(85, 23);
-            this.btnReset.TabIndex = 18;
-            this.btnReset.Text = "Reiniciar";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // frmArticulos
             // 

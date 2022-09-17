@@ -18,11 +18,11 @@ namespace Negocio
 
             string consulta = "Select M.Id, M.Descripcion From MARCAS M";
 
-            db.SetearConsulta(consulta);
-            db.EjecutarLectura();
-
             try
             {
+                db.SetearConsulta(consulta);
+                db.EjecutarLectura();
+
                 while (db.Reader.Read())
                 {
                     Marca marca = new Marca();

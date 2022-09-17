@@ -208,6 +208,11 @@ namespace TPWinForm_Gottig_Ramirez
                 string criterio = cbxCriterio.SelectedItem.ToString();
                 string filtro = txtFiltro.Text;
 
+                if(campo == "Precio")
+                {
+                    int validar = int.Parse(filtro);
+                }
+
                 int ordenarPor = 0;
 
                 if (rbtAsc.Checked == true)
@@ -220,10 +225,13 @@ namespace TPWinForm_Gottig_Ramirez
                 ocultarColumnas();
 
             }
-            catch (Exception)
+            catch (FormatException)
             {
-
-                throw;
+                MessageBox.Show("Por favor, ingrese un precio válido.");
+            }
+            catch (Exception ex2)
+            {
+                MessageBox.Show(ex2.ToString());
             }
         }
 

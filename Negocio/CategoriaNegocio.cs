@@ -17,6 +17,7 @@ namespace Negocio
             List<Categoria> lista = new List<Categoria>();
 
             string consulta = "Select C.Id, C.Descripcion From CATEGORIAS C";
+
             db.SetearConsulta(consulta);
             db.EjecutarLectura();
 
@@ -50,6 +51,7 @@ namespace Negocio
             try
             {
                 string accion = $"INSERT INTO CATEGORIAS (Descripcion) VALUES ({nueva.Descripcion})";
+
                 db.SetearConsulta(accion);
                 db.EjecutarAccion();
             }
@@ -86,6 +88,7 @@ namespace Negocio
             try
             {
                 string accion = $"DELETE FROM CATEGORIAS WHERE ID = {eliminar.ID}";
+
                 db.SetearConsulta(accion);
                 db.EjecutarAccion();
             }

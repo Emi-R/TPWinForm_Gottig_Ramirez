@@ -17,6 +17,7 @@ namespace Negocio
         {
             List<Articulo> articulos = new List<Articulo>();
             string consulta = "SELECT A.ID AS ID, A.CODIGO AS CODIGO, A.NOMBRE AS NOMBRE, A.DESCRIPCION AS DESCRIPCION, M.ID AS IdMarca,M.Descripcion AS MARCA, C.ID AS IdCategoria, C.Descripcion AS CATEGORIA, A.IMAGENURL AS IMAGENURL, A.Precio AS PRECIO FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id";
+
             db.SetearConsulta(consulta);
             db.EjecutarLectura();
 
@@ -127,8 +128,8 @@ namespace Negocio
             try
             {
                 string consulta = $"UPDATE ARTICULOS SET CODIGO = '{articulo.Codigo}', NOMBRE = '{articulo.Nombre}', Descripcion ='{articulo.Descripcion}', IdMarca=@IdMarca, IdCategoria=@IdCategoria, ImagenUrl = '{articulo.ImagenUrl}', PRECIO = {articulo.Precio} WHERE ID = {articulo.Id}";
-                db.SetearConsulta(consulta);
 
+                db.SetearConsulta(consulta);
                 db.SetearParametro("@IdMarca", articulo.Marca.ID);
                 db.SetearParametro("@IdCategoria", articulo.Categoria.ID);
 
@@ -145,7 +146,7 @@ namespace Negocio
             }
         }
 
-        private List<Articulo> ordenarLista(List<Articulo> lista, string campo, int ordenacion)
+        private List<Articulo> ordenarLista(ref List<Articulo> lista, string campo, int ordenacion)
         {
 
             switch (ordenacion)
@@ -209,6 +210,90 @@ namespace Negocio
             {
                 string consulta = "SELECT A.ID AS ID, A.CODIGO AS CODIGO, A.NOMBRE AS NOMBRE, A.DESCRIPCION AS DESCRIPCION, M.ID AS IdMarca,M.Descripcion AS MARCA, C.ID AS IdCategoria, C.Descripcion AS CATEGORIA, A.IMAGENURL AS IMAGENURL, A.Precio AS PRECIO FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id And ";
 
+                //Se agrega el where en string de consulta segun criterios y campo
+                consulta = AddWhereConsulta(consulta, campo, criterio, filtro);
+
+                // Recibe la lista por referencia, se mapea el reader y devuelve la lista ya cargada
+                lecturaFromDB(ref lista, consulta, campo, ordenacion);
+
+                // Recibe la lista por referencia y la ordena segun el id de "ordenacion"
+                ordenarLista(ref lista, campo, ordenacion);
+
+            }
+            catch (Exception ex2)
+            {
+                MessageBox.Show(ex2.Message);
+                throw;
+            }
+                return lista;
+
+        }
+
+        public List<Articulo> lecturaFromDB(ref List<Articulo> lista, string consulta, string campo, int ordenacion)
+        {
+            try
+            {
+                db.SetearConsulta(consulta);
+                db.EjecutarLectura();
+
+                while (db.Reader.Read())
+                {
+                    Articulo articulo = new Articulo();
+
+                    articulo.Id = (int)db.Reader["ID"];
+
+                    if (!(db.Reader["Codigo"] is DBNull))
+                        articulo.Codigo = (string)db.Reader["Codigo"];
+
+                    if (!(db.Reader["Nombre"] is DBNull))
+                        articulo.Nombre = (string)db.Reader["Nombre"];
+
+                    if (!(db.Reader["Descripcion"] is DBNull))
+                        articulo.Descripcion = (string)db.Reader["Descripcion"];
+
+                    articulo.Marca = new Marca();
+
+                    if (!(db.Reader["MARCA"] is DBNull))
+                    {
+                        articulo.Marca.ID = (int)db.Reader["IdMarca"];
+                        articulo.Marca.Descripcion = (string)db.Reader["Marca"];
+                    }
+
+                    if (!(db.Reader["CATEGORIA"] is DBNull))
+                    {
+                        articulo.Categoria = new Categoria();
+                        articulo.Categoria.ID = (int)db.Reader["IdCategoria"];
+                        articulo.Categoria.Descripcion = (string)db.Reader["Categoria"];
+                    }
+
+                    if (!(db.Reader["ImagenUrl"] is DBNull))
+                        articulo.ImagenUrl = (string)db.Reader["ImagenUrl"];
+
+                    if (!(db.Reader["Precio"] is DBNull))
+                        articulo.Precio = (float)db.Reader.GetDecimal(9);
+
+                    lista.Add(articulo);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+
+            return lista;
+
+        }
+
+        public string AddWhereConsulta(string consulta, string campo, string criterio, string filtro)
+        {
+            try
+            {
                 switch (campo)
                 {
                     case "Código":
@@ -292,60 +377,16 @@ namespace Negocio
                         }
                         break;
                 }
-
-                db.SetearConsulta(consulta);
-                db.EjecutarLectura();
-
-                while (db.Reader.Read())
-                {
-                    Articulo articulo = new Articulo();
-
-                    articulo.Id = (int)db.Reader["ID"];
-
-                    if (!(db.Reader["Codigo"] is DBNull))
-                        articulo.Codigo = (string)db.Reader["Codigo"];
-
-                    if (!(db.Reader["Nombre"] is DBNull))
-                        articulo.Nombre = (string)db.Reader["Nombre"];
-
-                    if (!(db.Reader["Descripcion"] is DBNull))
-                        articulo.Descripcion = (string)db.Reader["Descripcion"];
-
-                    articulo.Marca = new Marca();
-
-                    if (!(db.Reader["MARCA"] is DBNull))
-                    {
-                        articulo.Marca.ID = (int)db.Reader["IdMarca"];
-                        articulo.Marca.Descripcion = (string)db.Reader["Marca"];
-                    }
-
-                    if (!(db.Reader["CATEGORIA"] is DBNull))
-                    {
-                        articulo.Categoria = new Categoria();
-                        articulo.Categoria.ID = (int)db.Reader["IdCategoria"];
-                        articulo.Categoria.Descripcion = (string)db.Reader["Categoria"];
-                    }
-
-                    if (!(db.Reader["ImagenUrl"] is DBNull))
-                        articulo.ImagenUrl = (string)db.Reader["ImagenUrl"];
-
-                    if (!(db.Reader["Precio"] is DBNull))
-                        articulo.Precio = (float)db.Reader.GetDecimal(9);
-
-                    lista.Add(articulo);
-                }
-
-                lista = ordenarLista(lista, campo, ordenacion);
-
-                return lista;
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
                 throw;
             }
 
+            return consulta;
         }
+
     }
 }
+
