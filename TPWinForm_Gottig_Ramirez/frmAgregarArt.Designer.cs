@@ -50,6 +50,9 @@
             this.tbxPrecio = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.lblCodIncorrecto = new System.Windows.Forms.Label();
+            this.lblNombreInvalido = new System.Windows.Forms.Label();
+            this.lblPrecioInvalido = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gpbVistaPrevia.SuspendLayout();
             this.SuspendLayout();
@@ -83,7 +86,7 @@
             this.tbxCodigo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxCodigo.Name = "tbxCodigo";
             this.tbxCodigo.Size = new System.Drawing.Size(83, 22);
-            this.tbxCodigo.TabIndex = 2;
+            this.tbxCodigo.TabIndex = 0;
             // 
             // lblNombre
             // 
@@ -102,7 +105,7 @@
             this.tbxNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxNombre.Name = "tbxNombre";
             this.tbxNombre.Size = new System.Drawing.Size(194, 22);
-            this.tbxNombre.TabIndex = 4;
+            this.tbxNombre.TabIndex = 1;
             // 
             // lblDesc
             // 
@@ -122,7 +125,7 @@
             this.tbxDesc.Multiline = true;
             this.tbxDesc.Name = "tbxDesc";
             this.tbxDesc.Size = new System.Drawing.Size(347, 78);
-            this.tbxDesc.TabIndex = 6;
+            this.tbxDesc.TabIndex = 2;
             // 
             // lblMarca
             // 
@@ -144,7 +147,7 @@
             this.cbxMarcas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxMarcas.Name = "cbxMarcas";
             this.cbxMarcas.Size = new System.Drawing.Size(170, 22);
-            this.cbxMarcas.TabIndex = 8;
+            this.cbxMarcas.TabIndex = 3;
             this.cbxMarcas.ValueMember = "ID";
             // 
             // lblCategoria
@@ -167,7 +170,7 @@
             this.cbxCategoria.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(170, 22);
-            this.cbxCategoria.TabIndex = 10;
+            this.cbxCategoria.TabIndex = 4;
             this.cbxCategoria.ValueMember = "ID";
             // 
             // pictureBox1
@@ -220,7 +223,7 @@
             this.tbxImagenUrl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxImagenUrl.Name = "tbxImagenUrl";
             this.tbxImagenUrl.Size = new System.Drawing.Size(303, 22);
-            this.tbxImagenUrl.TabIndex = 15;
+            this.tbxImagenUrl.TabIndex = 5;
             this.tbxImagenUrl.Leave += new System.EventHandler(this.tbxImagenUrl_Leave);
             // 
             // btnCargarImg
@@ -231,8 +234,9 @@
             this.btnCargarImg.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCargarImg.Name = "btnCargarImg";
             this.btnCargarImg.Size = new System.Drawing.Size(37, 22);
-            this.btnCargarImg.TabIndex = 16;
+            this.btnCargarImg.TabIndex = 6;
             this.btnCargarImg.UseVisualStyleBackColor = true;
+            this.btnCargarImg.Click += new System.EventHandler(this.btnCargarImg_Click);
             // 
             // lblPrecio
             // 
@@ -253,7 +257,7 @@
             this.tbxPrecio.MaxLength = 7;
             this.tbxPrecio.Name = "tbxPrecio";
             this.tbxPrecio.Size = new System.Drawing.Size(83, 22);
-            this.tbxPrecio.TabIndex = 18;
+            this.tbxPrecio.TabIndex = 7;
             this.tbxPrecio.Tag = "";
             // 
             // btnCancelar
@@ -264,7 +268,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(145, 44);
-            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -276,10 +280,43 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(145, 44);
-            this.btnGuardar.TabIndex = 20;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // lblCodIncorrecto
+            // 
+            this.lblCodIncorrecto.AutoSize = true;
+            this.lblCodIncorrecto.ForeColor = System.Drawing.Color.Red;
+            this.lblCodIncorrecto.Location = new System.Drawing.Point(112, 65);
+            this.lblCodIncorrecto.Name = "lblCodIncorrecto";
+            this.lblCodIncorrecto.Size = new System.Drawing.Size(95, 14);
+            this.lblCodIncorrecto.TabIndex = 18;
+            this.lblCodIncorrecto.Text = "* Código inválido";
+            this.lblCodIncorrecto.Visible = false;
+            // 
+            // lblNombreInvalido
+            // 
+            this.lblNombreInvalido.AutoSize = true;
+            this.lblNombreInvalido.ForeColor = System.Drawing.Color.Red;
+            this.lblNombreInvalido.Location = new System.Drawing.Point(271, 64);
+            this.lblNombreInvalido.Name = "lblNombreInvalido";
+            this.lblNombreInvalido.Size = new System.Drawing.Size(102, 14);
+            this.lblNombreInvalido.TabIndex = 19;
+            this.lblNombreInvalido.Text = "* Nombre Inválido";
+            this.lblNombreInvalido.Visible = false;
+            // 
+            // lblPrecioInvalido
+            // 
+            this.lblPrecioInvalido.AutoSize = true;
+            this.lblPrecioInvalido.ForeColor = System.Drawing.Color.Red;
+            this.lblPrecioInvalido.Location = new System.Drawing.Point(205, 316);
+            this.lblPrecioInvalido.Name = "lblPrecioInvalido";
+            this.lblPrecioInvalido.Size = new System.Drawing.Size(93, 14);
+            this.lblPrecioInvalido.TabIndex = 20;
+            this.lblPrecioInvalido.Text = "* Precio Inválido";
+            this.lblPrecioInvalido.Visible = false;
             // 
             // frmAgregarArt
             // 
@@ -288,6 +325,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(890, 425);
+            this.Controls.Add(this.lblPrecioInvalido);
+            this.Controls.Add(this.lblNombreInvalido);
+            this.Controls.Add(this.lblCodIncorrecto);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.tbxPrecio);
@@ -346,5 +386,8 @@
         private System.Windows.Forms.TextBox tbxPrecio;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label lblCodIncorrecto;
+        private System.Windows.Forms.Label lblNombreInvalido;
+        private System.Windows.Forms.Label lblPrecioInvalido;
     }
 }

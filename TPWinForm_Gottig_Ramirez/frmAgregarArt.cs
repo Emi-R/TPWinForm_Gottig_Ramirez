@@ -1,5 +1,6 @@
 ﻿using Dominio;
 using Negocio;
+using System.IO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,12 +10,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace TPWinForm_Gottig_Ramirez
 {
+
     public partial class frmAgregarArt : Form
     {
         private Articulo articulo = null;
+        private OpenFileDialog archivo = null;
+
         public frmAgregarArt()
         {
             InitializeComponent();
@@ -32,6 +37,44 @@ namespace TPWinForm_Gottig_Ramirez
             this.Close();
         }
 
+        private bool validarCampos()
+        {
+            bool flag = true;
+
+            if (string.IsNullOrEmpty(tbxCodigo.Text))
+            {
+                lblCodIncorrecto.Visible = true;
+                flag = false;
+            }
+            else
+            {
+                lblCodIncorrecto.Visible = false;
+            }
+
+            if (string.IsNullOrEmpty(tbxNombre.Text))
+            {
+                lblNombreInvalido.Visible = true;
+                flag = false;
+            }
+            else 
+            {
+                lblNombreInvalido.Visible = false;
+            }
+          
+
+            if(string.IsNullOrEmpty(tbxPrecio.Text))
+            {
+                lblPrecioInvalido.Visible = true;
+                flag = false;
+            }
+            else
+            {
+                lblPrecioInvalido.Visible = false;
+            }
+
+            return flag;
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
@@ -41,6 +84,11 @@ namespace TPWinForm_Gottig_Ramirez
             {
                 if (articulo == null)
                     articulo = new Articulo();
+
+                if(!validarCampos())
+                {
+                    return;
+                }
 
                 articulo.Codigo = tbxCodigo.Text;
                 articulo.Nombre = tbxNombre.Text;
@@ -55,7 +103,10 @@ namespace TPWinForm_Gottig_Ramirez
                 articulo.ImagenUrl = tbxImagenUrl.Text;
                 articulo.Precio = float.Parse(tbxPrecio.Text);
 
-                if(articulo.Id != 0)
+                if (archivo != null && !(tbxImagenUrl.Text.ToLower().Contains("http")))
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["carpeta-imagenes"] + archivo.SafeFileName, true);
+
+                if (articulo.Id != 0)
                 {
                     articuloNegocio.ModificarArticulo(articulo);
                     MessageBox.Show("Articulo modificado exitosamente!");
@@ -70,7 +121,8 @@ namespace TPWinForm_Gottig_Ramirez
             }
             catch (FormatException)
             {
-                MessageBox.Show("Campo Precio inválido. Ingrese solo números.");
+                lblPrecioInvalido.Visible = true;
+                lblPrecioInvalido.Text = "* Solo números por favor";
             }
             catch (Exception ex)
             {
@@ -96,7 +148,7 @@ namespace TPWinForm_Gottig_Ramirez
                 cbxCategoria.ValueMember = "ID";
                 cbxCategoria.DisplayMember = "Descripcion";
 
-                if(articulo != null)
+                if (articulo != null)
                 {
                     tbxCodigo.Text = articulo.Codigo;
                     tbxNombre.Text = articulo.Nombre;
@@ -135,6 +187,19 @@ namespace TPWinForm_Gottig_Ramirez
         private void tbxImagenUrl_Leave(object sender, EventArgs e)
         {
             cargarImagen(tbxImagenUrl.Text);
+        }
+
+        private void btnCargarImg_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+
+            archivo.Filter = "jpg|*.jpg|png|*.png";
+
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                tbxImagenUrl.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
+            }
         }
     }
 }

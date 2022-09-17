@@ -90,10 +90,12 @@ namespace TPWinForm_Gottig_Ramirez
 
         private void btnModificarArt_Click(object sender, EventArgs e)
         {
+
             Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             frmAgregarArt formModificar = new frmAgregarArt(articulo);
             formModificar.ShowDialog();
             updateGrilla();
+
         }
 
         //Boton Eliminar Articulo
@@ -239,6 +241,13 @@ namespace TPWinForm_Gottig_Ramirez
         {
             updateGrilla();
             txtFiltro.Clear();
+        }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategorias ventanaCat = new frmCategorias();
+            ventanaCat.ShowDialog();
+
         }
     }
 }
