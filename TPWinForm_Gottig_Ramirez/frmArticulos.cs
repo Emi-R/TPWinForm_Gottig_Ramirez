@@ -46,6 +46,8 @@ namespace TPWinForm_Gottig_Ramirez
                 dgvArticulos.DataSource = listaArt;
                 ocultarColumnas();
                 cargarImagen(listaArt[0].ImagenUrl);
+                txtFiltro.Clear();
+                tbxFiltroRapido.Clear();
             }
             catch (Exception ex)
             {
@@ -145,6 +147,8 @@ namespace TPWinForm_Gottig_Ramirez
             {
                 Articulo picked = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 cargarImagen(picked.ImagenUrl);
+                lblPrecioDetalle.Visible = true;
+                lblPrecioDetalle.Text = picked.Precio.ToString();
             }
         }
 
@@ -165,10 +169,11 @@ namespace TPWinForm_Gottig_Ramirez
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltroRapido;
 
-            if(dgvArticulos.CurrentRow == null)
+            if (dgvArticulos.CurrentRow == null)
             {
                 btnModificarArt.Enabled = false;
                 btnEliminar.Enabled = false;
+                lblPrecioDetalle.Text = "";
             }
             else
             {
@@ -197,7 +202,7 @@ namespace TPWinForm_Gottig_Ramirez
                 case "Precio":
                     cbxCriterio.Items.Clear();
                     cbxCriterio.Items.Add("Menor a");
-                    cbxCriterio.Items.Add("Igual a");
+                    cbxCriterio.Items.Add("Entre valores");
                     cbxCriterio.Items.Add("Mayor a");
                     break;
             }
@@ -209,21 +214,37 @@ namespace TPWinForm_Gottig_Ramirez
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
+            tbxFiltroRapido.Clear();
+
             try
             {
-                if(txtFiltro.Text == "")
-                {
-                    MessageBox.Show("Campo filtro esta vacio.");
-                    return;
-                }
 
                 string campo = cbxCampo.SelectedItem.ToString();
                 string criterio = cbxCriterio.SelectedItem.ToString();
                 string filtro = txtFiltro.Text;
+                int inicio = 0;
+                int fin = 0;
 
-                if(campo == "Precio")
+                if (campo == "Precio")
                 {
-                    int validar = int.Parse(filtro);
+                    if (criterio == "Entre valores")
+                    {
+                        inicio = int.Parse(tbxInicio.Text);
+                        fin = int.Parse(tbxFin.Text);
+
+                    }
+                    else
+                    {
+                        if (txtFiltro.Text == "")
+                        {
+                            MessageBox.Show("Campo filtro esta vacio.");
+                            return;
+                        }
+
+                        int validar = int.Parse(filtro);
+
+                    }
+
                 }
 
                 int ordenarPor = 0;
@@ -234,7 +255,20 @@ namespace TPWinForm_Gottig_Ramirez
                 if (rbtDesc.Checked == true)
                     ordenarPor = 1;
 
-                dgvArticulos.DataSource = articuloNegocio.Filtrar(campo, criterio, filtro, ordenarPor);
+                dgvArticulos.DataSource = articuloNegocio.Filtrar(campo, criterio, filtro, ordenarPor, inicio, fin);
+
+                if (dgvArticulos.CurrentRow == null)
+                {
+                    btnModificarArt.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    lblPrecioDetalle.Text = "";
+                }
+                else
+                {
+                    btnModificarArt.Enabled = true;
+                    btnEliminar.Enabled = true;
+                }
+
                 ocultarColumnas();
 
             }
@@ -250,7 +284,7 @@ namespace TPWinForm_Gottig_Ramirez
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            
+
             updateGrilla();
             txtFiltro.Clear();
             tbxFiltroRapido.Clear();
@@ -261,6 +295,28 @@ namespace TPWinForm_Gottig_Ramirez
             frmCategorias ventanaCat = new frmCategorias();
             ventanaCat.ShowDialog();
 
+        }
+
+        private void cbxCriterio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxCriterio.SelectedItem.ToString() == "Entre valores")
+            {
+                txtFiltro.Visible = false;
+                txtFiltro.Clear();
+                tbxInicio.Visible = true;
+                tbxFin.Visible = true;
+                lblY.Visible = true;
+                
+            }
+            else
+            {
+                txtFiltro.Visible = true;
+                tbxInicio.Visible = false;
+                tbxInicio.Clear();
+                tbxFin.Visible = false;
+                tbxFin.Clear();
+                lblY.Visible = false;
+            }
         }
     }
 }

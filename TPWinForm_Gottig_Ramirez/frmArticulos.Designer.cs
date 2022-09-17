@@ -37,6 +37,7 @@
             this.lblTituloArt = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.irAMenúMarcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAgregarArt = new System.Windows.Forms.Button();
             this.gbxImagen = new System.Windows.Forms.GroupBox();
             this.pbxArt = new System.Windows.Forms.PictureBox();
@@ -47,6 +48,9 @@
             this.tbxFiltroRapido = new System.Windows.Forms.TextBox();
             this.cbxCampo = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblY = new System.Windows.Forms.Label();
+            this.tbxFin = new System.Windows.Forms.TextBox();
+            this.tbxInicio = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.rbtNoOrd = new System.Windows.Forms.RadioButton();
             this.rbtDesc = new System.Windows.Forms.RadioButton();
@@ -57,7 +61,8 @@
             this.lblCriterio = new System.Windows.Forms.Label();
             this.cbxCriterio = new System.Windows.Forms.ComboBox();
             this.lblCampo = new System.Windows.Forms.Label();
-            this.irAMenúMarcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblPrecioDetalle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gbxImagen.SuspendLayout();
@@ -166,6 +171,12 @@
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.menuToolStripMenuItem.Text = "Ir a Menú Categorías";
             this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
+            // 
+            // irAMenúMarcasToolStripMenuItem
+            // 
+            this.irAMenúMarcasToolStripMenuItem.Name = "irAMenúMarcasToolStripMenuItem";
+            this.irAMenúMarcasToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.irAMenúMarcasToolStripMenuItem.Text = "Ir a Menú Marcas";
             // 
             // btnAgregarArt
             // 
@@ -276,11 +287,11 @@
             // 
             // tbxFiltroRapido
             // 
-            this.tbxFiltroRapido.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxFiltroRapido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxFiltroRapido.Location = new System.Drawing.Point(5, 17);
             this.tbxFiltroRapido.Margin = new System.Windows.Forms.Padding(2);
             this.tbxFiltroRapido.Name = "tbxFiltroRapido";
-            this.tbxFiltroRapido.Size = new System.Drawing.Size(408, 23);
+            this.tbxFiltroRapido.Size = new System.Drawing.Size(408, 21);
             this.tbxFiltroRapido.TabIndex = 0;
             this.tbxFiltroRapido.TextChanged += new System.EventHandler(this.tbxFiltroRapido_TextChanged);
             // 
@@ -297,6 +308,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblY);
+            this.groupBox2.Controls.Add(this.tbxFin);
+            this.groupBox2.Controls.Add(this.tbxInicio);
             this.groupBox2.Controls.Add(this.btnReset);
             this.groupBox2.Controls.Add(this.rbtNoOrd);
             this.groupBox2.Controls.Add(this.rbtDesc);
@@ -315,6 +329,35 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtro Avanzado";
+            // 
+            // lblY
+            // 
+            this.lblY.AutoSize = true;
+            this.lblY.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblY.Location = new System.Drawing.Point(400, 54);
+            this.lblY.Name = "lblY";
+            this.lblY.Size = new System.Drawing.Size(13, 15);
+            this.lblY.TabIndex = 17;
+            this.lblY.Text = "y";
+            this.lblY.Visible = false;
+            // 
+            // tbxFin
+            // 
+            this.tbxFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxFin.Location = new System.Drawing.Point(416, 51);
+            this.tbxFin.Name = "tbxFin";
+            this.tbxFin.Size = new System.Drawing.Size(58, 21);
+            this.tbxFin.TabIndex = 16;
+            this.tbxFin.Visible = false;
+            // 
+            // tbxInicio
+            // 
+            this.tbxInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxInicio.Location = new System.Drawing.Point(336, 51);
+            this.tbxInicio.Name = "tbxInicio";
+            this.tbxInicio.Size = new System.Drawing.Size(58, 21);
+            this.tbxInicio.TabIndex = 15;
+            this.tbxInicio.Visible = false;
             // 
             // btnReset
             // 
@@ -377,7 +420,7 @@
             // 
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltro.Location = new System.Drawing.Point(333, 30);
+            this.lblFiltro.Location = new System.Drawing.Point(333, 29);
             this.lblFiltro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(33, 14);
@@ -386,17 +429,18 @@
             // 
             // txtFiltro
             // 
+            this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltro.Location = new System.Drawing.Point(336, 51);
             this.txtFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(138, 23);
+            this.txtFiltro.Size = new System.Drawing.Size(138, 21);
             this.txtFiltro.TabIndex = 2;
             // 
             // lblCriterio
             // 
             this.lblCriterio.AutoSize = true;
             this.lblCriterio.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCriterio.Location = new System.Drawing.Point(173, 30);
+            this.lblCriterio.Location = new System.Drawing.Point(173, 29);
             this.lblCriterio.Name = "lblCriterio";
             this.lblCriterio.Size = new System.Drawing.Size(44, 14);
             this.lblCriterio.TabIndex = 10;
@@ -412,23 +456,39 @@
             this.cbxCriterio.Name = "cbxCriterio";
             this.cbxCriterio.Size = new System.Drawing.Size(138, 21);
             this.cbxCriterio.TabIndex = 1;
+            this.cbxCriterio.SelectedIndexChanged += new System.EventHandler(this.cbxCriterio_SelectedIndexChanged);
             // 
             // lblCampo
             // 
             this.lblCampo.AutoSize = true;
             this.lblCampo.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCampo.Location = new System.Drawing.Point(13, 30);
+            this.lblCampo.Location = new System.Drawing.Point(13, 29);
             this.lblCampo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCampo.Name = "lblCampo";
             this.lblCampo.Size = new System.Drawing.Size(42, 14);
             this.lblCampo.TabIndex = 10;
             this.lblCampo.Text = "Campo";
             // 
-            // irAMenúMarcasToolStripMenuItem
+            // lblPrecio
             // 
-            this.irAMenúMarcasToolStripMenuItem.Name = "irAMenúMarcasToolStripMenuItem";
-            this.irAMenúMarcasToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.irAMenúMarcasToolStripMenuItem.Text = "Ir a Menú Marcas";
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Font = new System.Drawing.Font("Bahnschrift SemiBold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Location = new System.Drawing.Point(809, 418);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(86, 29);
+            this.lblPrecio.TabIndex = 7;
+            this.lblPrecio.Text = "Precio:";
+            // 
+            // lblPrecioDetalle
+            // 
+            this.lblPrecioDetalle.AutoSize = true;
+            this.lblPrecioDetalle.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioDetalle.Location = new System.Drawing.Point(911, 421);
+            this.lblPrecioDetalle.Name = "lblPrecioDetalle";
+            this.lblPrecioDetalle.Size = new System.Drawing.Size(70, 23);
+            this.lblPrecioDetalle.TabIndex = 8;
+            this.lblPrecioDetalle.Text = "xxxxxx";
+            this.lblPrecioDetalle.Visible = false;
             // 
             // frmArticulos
             // 
@@ -437,6 +497,8 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1160, 562);
+            this.Controls.Add(this.lblPrecioDetalle);
+            this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEliminar);
@@ -495,5 +557,10 @@
         private System.Windows.Forms.RadioButton rbtDesc;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.ToolStripMenuItem irAMenúMarcasToolStripMenuItem;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lblPrecioDetalle;
+        private System.Windows.Forms.Label lblY;
+        private System.Windows.Forms.TextBox tbxFin;
+        private System.Windows.Forms.TextBox tbxInicio;
     }
 }

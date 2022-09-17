@@ -202,7 +202,7 @@ namespace Negocio
             return lista;
         }
 
-        public List<Articulo> Filtrar(string campo, string criterio, string filtro, int ordenacion)
+        public List<Articulo> Filtrar(string campo, string criterio, string filtro, int ordenacion, int inicio, int fin)
         {
             List<Articulo> lista = new List<Articulo>();
 
@@ -211,7 +211,7 @@ namespace Negocio
                 string consulta = "SELECT A.ID AS ID, A.CODIGO AS CODIGO, A.NOMBRE AS NOMBRE, A.DESCRIPCION AS DESCRIPCION, M.ID AS IdMarca,M.Descripcion AS MARCA, C.ID AS IdCategoria, C.Descripcion AS CATEGORIA, A.IMAGENURL AS IMAGENURL, A.Precio AS PRECIO FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id And ";
 
                 //Se agrega el where en string de consulta segun criterios y campo
-                consulta = AddWhereConsulta(consulta, campo, criterio, filtro);
+                consulta = AddWhereConsulta(consulta, campo, criterio, filtro, inicio, fin);
 
                 // Recibe la lista por referencia, se mapea el reader y devuelve la lista ya cargada
                 lecturaFromDB(ref lista, consulta);
@@ -290,7 +290,7 @@ namespace Negocio
 
         }
 
-        public string AddWhereConsulta(string consulta, string campo, string criterio, string filtro)
+        public string AddWhereConsulta(string consulta, string campo, string criterio, string filtro, int inicio, int fin)
         {
 
             switch (campo)
@@ -365,8 +365,8 @@ namespace Negocio
                         case "Menor a":
                             consulta += $"A.Precio < {filtro}";
                             break;
-                        case "Igual a":
-                            consulta += $"A.Precio = {filtro}";
+                        case "Entre valores":
+                            consulta += $"A.Precio Between {inicio} And {fin}";
                             break;
                         case "Mayor a":
                             consulta += $"A.Precio > {filtro}";
