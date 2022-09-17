@@ -214,9 +214,9 @@ namespace Negocio
                 consulta = AddWhereConsulta(consulta, campo, criterio, filtro);
 
                 // Recibe la lista por referencia, se mapea el reader y devuelve la lista ya cargada
-                lecturaFromDB(ref lista, consulta, campo, ordenacion);
+                lecturaFromDB(ref lista, consulta);
 
-                // Recibe la lista por referencia y la ordena segun el id de "ordenacion"
+                // Recibe la lista por referencia y la ordena segun el campo y id de "ordenacion"(Asc/Desc)
                 ordenarLista(ref lista, campo, ordenacion);
 
             }
@@ -225,11 +225,11 @@ namespace Negocio
                 MessageBox.Show(ex2.Message);
                 throw;
             }
-                return lista;
+            return lista;
 
         }
 
-        public List<Articulo> lecturaFromDB(ref List<Articulo> lista, string consulta, string campo, int ordenacion)
+        public List<Articulo> lecturaFromDB(ref List<Articulo> lista, string consulta)
         {
             try
             {
@@ -292,96 +292,89 @@ namespace Negocio
 
         public string AddWhereConsulta(string consulta, string campo, string criterio, string filtro)
         {
-            try
+
+            switch (campo)
             {
-                switch (campo)
-                {
-                    case "Código":
-                        switch (criterio)
-                        {
-                            case "Comienza con":
-                                consulta += $"A.Codigo like '{filtro}%'";
-                                break;
-                            case "Contiene":
-                                consulta += $"A.Codigo like '%{filtro}%'";
-                                break;
-                            case "Finaliza con":
-                                consulta += $"A.Codigo like '%{filtro}'";
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    case "Nombre":
-                        switch (criterio)
-                        {
-                            case "Comienza con":
-                                consulta += $"A.Nombre like '{filtro}%'";
-                                break;
-                            case "Contiene":
-                                consulta += $"A.Nombre like '%{filtro}%'";
-                                break;
-                            case "Finaliza con":
-                                consulta += $"A.Nombre like '%{filtro}'";
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    case "Marca":
-                        switch (criterio)
-                        {
-                            case "Comienza con":
-                                consulta += $"M.Descripcion like '{filtro}%'";
-                                break;
-                            case "Contiene":
-                                consulta += $"M.Descripcion like '%{filtro}%'";
-                                break;
-                            case "Finaliza con":
-                                consulta += $"M.Descripcion like '%{filtro}'";
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    case "Categoría":
-                        switch (criterio)
-                        {
-                            case "Comienza con":
-                                consulta += $"C.Descripcion like '{filtro}%'";
-                                break;
-                            case "Contiene":
-                                consulta += $"C.Descripcion like '%{filtro}%'";
-                                break;
-                            case "Finaliza con":
-                                consulta += $"C.Descripcion like '%{filtro}'";
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                    case "Precio":
-                        switch (criterio)
-                        {
-                            case "Menor a":
-                                consulta += $"A.Precio < {filtro}";
-                                break;
-                            case "Igual a":
-                                consulta += $"A.Precio = {filtro}";
-                                break;
-                            case "Mayor a":
-                                consulta += $"A.Precio > {filtro}";
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                throw;
+                case "Código":
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += $"A.Codigo like '{filtro}%'";
+                            break;
+                        case "Contiene":
+                            consulta += $"A.Codigo like '%{filtro}%'";
+                            break;
+                        case "Finaliza con":
+                            consulta += $"A.Codigo like '%{filtro}'";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "Nombre":
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += $"A.Nombre like '{filtro}%'";
+                            break;
+                        case "Contiene":
+                            consulta += $"A.Nombre like '%{filtro}%'";
+                            break;
+                        case "Finaliza con":
+                            consulta += $"A.Nombre like '%{filtro}'";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "Marca":
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += $"M.Descripcion like '{filtro}%'";
+                            break;
+                        case "Contiene":
+                            consulta += $"M.Descripcion like '%{filtro}%'";
+                            break;
+                        case "Finaliza con":
+                            consulta += $"M.Descripcion like '%{filtro}'";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "Categoría":
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += $"C.Descripcion like '{filtro}%'";
+                            break;
+                        case "Contiene":
+                            consulta += $"C.Descripcion like '%{filtro}%'";
+                            break;
+                        case "Finaliza con":
+                            consulta += $"C.Descripcion like '%{filtro}'";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "Precio":
+                    switch (criterio)
+                    {
+                        case "Menor a":
+                            consulta += $"A.Precio < {filtro}";
+                            break;
+                        case "Igual a":
+                            consulta += $"A.Precio = {filtro}";
+                            break;
+                        case "Mayor a":
+                            consulta += $"A.Precio > {filtro}";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
             }
 
             return consulta;
