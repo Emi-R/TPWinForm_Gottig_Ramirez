@@ -15,6 +15,7 @@ namespace TPWinForm_Gottig_Ramirez
     public partial class frmAgregarCategoria : Form
     {
         private Categoria categoria = null;
+
         public frmAgregarCategoria()
         {
             InitializeComponent();
@@ -23,16 +24,17 @@ namespace TPWinForm_Gottig_Ramirez
         public frmAgregarCategoria(Categoria categoria)
         {
             this.categoria = categoria;
-            
+
             InitializeComponent();
-            
+
         }
         private void frmAgregarCategoria_Load(object sender, EventArgs e)
         {
-            btnAgregar.Text = "Modificar categoria";
-
-            //TODO: Checkear si es NULL para agregar/modificar
-            lblCategorias.Text = $"Categoria: {categoria.Descripcion}";
+            if (categoria != null)
+            {
+                lblCategorias.Text = $"Categoria: {categoria.Descripcion}";
+                btnAgregar.Text = "Modificar categoria";
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
