@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarCategoria));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.tbxDescripcion = new System.Windows.Forms.TextBox();
             this.lblCategorias = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -77,30 +75,11 @@
             this.lblCategorias.AutoSize = true;
             this.lblCategorias.Font = new System.Drawing.Font("Corbel", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategorias.Location = new System.Drawing.Point(75, 175);
-            this.lblCategorias.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.lblCategorias.Margin = new System.Windows.Forms.Padding(14);
             this.lblCategorias.Name = "lblCategorias";
             this.lblCategorias.Size = new System.Drawing.Size(463, 73);
             this.lblCategorias.TabIndex = 15;
             this.lblCategorias.Text = "Nueva Categoria";
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnVolver.FlatAppearance.BorderSize = 3;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Image = ((System.Drawing.Image)(resources.GetObject("btnVolver.Image")));
-            this.btnVolver.Location = new System.Drawing.Point(27, 66);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(87, 75);
-            this.btnVolver.TabIndex = 14;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnVolver.UseVisualStyleBackColor = false;
             // 
             // menuStrip
             // 
@@ -111,15 +90,14 @@
             this.menuToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(610, 33);
+            this.menuStrip.Size = new System.Drawing.Size(915, 54);
             this.menuStrip.TabIndex = 16;
             this.menuStrip.Text = "menuStrip1";
             // 
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(73, 29);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(73, 50);
             this.menuToolStripMenuItem.Text = "Menú";
             // 
             // lblNombre
@@ -143,7 +121,6 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.tbxDescripcion);
             this.Controls.Add(this.lblCategorias);
-            this.Controls.Add(this.btnVolver);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmAgregarCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -161,7 +138,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox tbxDescripcion;
         private System.Windows.Forms.Label lblCategorias;
-        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.Label lblNombre;

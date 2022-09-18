@@ -104,9 +104,21 @@ namespace TPWinForm_Gottig_Ramirez
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Categoria modificarCat = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
-            frmAgregarCategoria frmAgregarArt = new frmAgregarCategoria(modificarCat);
-            frmAgregarArt.ShowDialog();
+            if(dgvCategorias.CurrentRow != null)
+            {
+                Categoria modificarCat = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+                frmAgregarCategoria frmAgregarArt = new frmAgregarCategoria(modificarCat);
+                frmAgregarArt.ShowDialog();
+            }
+            else
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+                string mensaje = $"No ha seleccionado ninguna Categoria";
+                string title = "Atencion!";
+
+                MessageBox.Show(mensaje, title, buttons, MessageBoxIcon.Exclamation);
+            }
             updateGrilla();
         }
 

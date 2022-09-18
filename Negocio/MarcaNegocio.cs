@@ -46,14 +46,57 @@ namespace Negocio
             return lista;
         }
 
-        public void AgregarMarca()
+        public void AgregarMarca(Marca nueva)
         {
-
+            try
+            {
+                db.SetearConsulta($"INSERT INTO MARCAS (Descripcion) VALUES ('{nueva.Descripcion}')");
+                db.EjecutarAccion();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
         }
 
-        public void ModificarMarca()
-        {
 
+        public void ModificarMarca(Marca modificar)
+        {
+            try
+            {
+                db.SetearConsulta($"UPDATE MARCAS SET Descripcion = '{modificar.Descripcion}' WHERE ID = @id");
+                db.SetearParametro("@id", modificar.ID);
+                db.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
+        }
+
+        public void EliminarMarca(Marca eliminar)
+        {
+            try
+            {
+                db.SetearConsulta($"DELETE FROM MARCAS WHERE ID = {eliminar.ID}");
+                db.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                db.CerrarConexion();
+            }
         }
     }
 }

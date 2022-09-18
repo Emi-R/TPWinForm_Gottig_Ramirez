@@ -69,12 +69,67 @@ namespace TPWinForm_Gottig_Ramirez
         {
             frmAgregarMarca frmAgregarMarca = new frmAgregarMarca();
             frmAgregarMarca.ShowDialog();
+            updateGrilla();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            frmAgregarMarca frmModificarMarca = new frmAgregarMarca();
-            frmModificarMarca.ShowDialog();
+            if(dgvMarcas.CurrentRow != null)
+            {
+                Marca marca = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+                frmAgregarMarca frmModificarMarca = new frmAgregarMarca(marca);
+                frmModificarMarca.ShowDialog();
+                updateGrilla();
+            }
+            else
+            {
+                alertAviso("Atencion!", "No ha seleccionado ninguna Marca");
+            }
+            updateGrilla();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if(dgvMarcas.CurrentRow != null)
+            {
+                Marca eliminarMarca = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                string mensaje = $"Desea eliminar la Marca: {eliminarMarca.Descripcion}?";
+                string title = "Confirmar borrado";
+
+                DialogResult msg = MessageBox.Show(mensaje, title, buttons, MessageBoxIcon.Question);
+                if (msg == DialogResult.Yes)
+                {
+                    try
+                    {
+                        negocioMarca.EliminarMarca(eliminarMarca);
+                        updateGrilla();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        throw;
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                alertAviso("Atencion!", "No ha seleccionado ninguna Marca");
+            }
+            updateGrilla();
+
+        }
+
+        private void alertAviso(string title, string message)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            MessageBox.Show(message, title, buttons, MessageBoxIcon.Exclamation);
         }
     }
 }
