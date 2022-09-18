@@ -51,6 +51,8 @@ namespace TPWinForm_Gottig_Ramirez
                 if (categoria == null) categoria = new Categoria();
                 categoria.Descripcion = tbxDescripcion.Text;
 
+                if (!validar()) return;
+
                 if(categoria.ID != 0)
                 {
                     negocio.ModificarCategoria(categoria);
@@ -68,6 +70,37 @@ namespace TPWinForm_Gottig_Ramirez
                 MessageBox.Show(ex.ToString());
                 throw;
             }
+        }
+
+        private bool validar()
+        {
+            if (string.IsNullOrEmpty(tbxDescripcion.Text) || !validarCadena())
+            {
+                alertAviso("Error!", "Por favor ingrese al menos un caracter");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        
+        private bool validarCadena()
+        {
+            foreach(var c in tbxDescripcion.Text)
+            {
+                if (!char.IsWhiteSpace(c))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void alertAviso(string title, string message)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            MessageBox.Show(message, title, buttons, MessageBoxIcon.Exclamation);
         }
     }
 }
