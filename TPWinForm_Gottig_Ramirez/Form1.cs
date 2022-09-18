@@ -38,5 +38,11 @@ namespace TPWinForm_Gottig_Ramirez
         {
 
         }
+
+        private void btnMarcas_Click(object sender, EventArgs e)
+        {
+            frmMarcas frmMarcas = new frmMarcas();
+            frmMarcas.ShowDialog();
+        }
     }
 }

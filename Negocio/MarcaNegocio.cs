@@ -45,5 +45,15 @@ namespace Negocio
 
             return lista;
         }
+
+        public void AgregarMarca()
+        {
+
+        }
+
+        public void ModificarMarca()
+        {
+
+        }
     }
 }

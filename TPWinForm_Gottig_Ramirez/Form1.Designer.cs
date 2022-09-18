@@ -37,9 +37,9 @@
             this.btnMarcas = new System.Windows.Forms.Button();
             this.gbxAbout = new System.Windows.Forms.GroupBox();
             this.lblAbout = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxAbout = new System.Windows.Forms.PictureBox();
             this.gbxAbout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAbout)).BeginInit();
             this.SuspendLayout();
             // 
             // btnArticulos
@@ -151,20 +151,22 @@
             this.btnMarcas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMarcas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMarcas.UseVisualStyleBackColor = false;
+            this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
             // 
             // gbxAbout
             // 
-            this.gbxAbout.Controls.Add(this.pictureBox1);
+            this.gbxAbout.Controls.Add(this.pbxAbout);
             this.gbxAbout.Controls.Add(this.lblAbout);
             this.gbxAbout.Location = new System.Drawing.Point(309, 791);
             this.gbxAbout.Name = "gbxAbout";
-            this.gbxAbout.Size = new System.Drawing.Size(234, 38);
+            this.gbxAbout.Size = new System.Drawing.Size(234, 46);
             this.gbxAbout.TabIndex = 5;
             this.gbxAbout.TabStop = false;
             // 
             // lblAbout
             // 
             this.lblAbout.AutoSize = true;
+            this.lblAbout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAbout.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblAbout.Location = new System.Drawing.Point(104, 11);
@@ -174,15 +176,17 @@
             this.lblAbout.Text = "About";
             this.lblAbout.Click += new System.EventHandler(this.lblAbout_Click);
             // 
-            // pictureBox1
+            // pbxAbout
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(72, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 24);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pbxAbout.Image = ((System.Drawing.Image)(resources.GetObject("pbxAbout.Image")));
+            this.pbxAbout.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxAbout.InitialImage")));
+            this.pbxAbout.Location = new System.Drawing.Point(72, 11);
+            this.pbxAbout.Margin = new System.Windows.Forms.Padding(0);
+            this.pbxAbout.Name = "pbxAbout";
+            this.pbxAbout.Size = new System.Drawing.Size(28, 28);
+            this.pbxAbout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxAbout.TabIndex = 1;
+            this.pbxAbout.TabStop = false;
             // 
             // frmMenuPrincipal
             // 
@@ -208,7 +212,7 @@
             this.Text = "TP WinForms / Gottig - Ramirez";
             this.gbxAbout.ResumeLayout(false);
             this.gbxAbout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAbout)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,7 +227,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnMarcas;
         private System.Windows.Forms.GroupBox gbxAbout;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxAbout;
         private System.Windows.Forms.Label lblAbout;
     }
 }

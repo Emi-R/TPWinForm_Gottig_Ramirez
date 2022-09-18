@@ -38,28 +38,12 @@ namespace TPWinForm_Gottig_Ramirez
                 MessageBox.Show(ex.ToString());
             }
         }
-
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnFiltro_Click(object sender, EventArgs e)
-        {
-            filtrar();
-        }
-
-        private void tbxFiltro_Enter(object sender, EventArgs e)
-        {
-            filtrar();
-        }
-
         private void filtrar()
         {
-                        List<Categoria> listaFiltrada;
+            List<Categoria> listaFiltrada;
             string filtro = tbxFiltro.Text;
 
-            if(filtro != null)
+            if (filtro != null)
             {
                 listaFiltrada = listaCategorias.FindAll(c => c.Descripcion.ToUpper().Contains(filtro.ToUpper()));
             }
@@ -72,6 +56,15 @@ namespace TPWinForm_Gottig_Ramirez
             dgvCategorias.DataSource = listaFiltrada;
         }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            filtrar();
+        }
         private void CheckEnterKeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Return)

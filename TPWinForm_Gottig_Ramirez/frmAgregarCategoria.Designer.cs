@@ -43,10 +43,10 @@
             // btnCancelar
             // 
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Location = new System.Drawing.Point(447, 374);
+            this.btnCancelar.Location = new System.Drawing.Point(322, 329);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(218, 35);
+            this.btnCancelar.Size = new System.Drawing.Size(198, 35);
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -54,10 +54,10 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(174, 372);
+            this.btnAgregar.Location = new System.Drawing.Point(88, 326);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(232, 37);
+            this.btnAgregar.Size = new System.Drawing.Size(194, 38);
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar categoria";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -66,7 +66,7 @@
             // tbxDescripcion
             // 
             this.tbxDescripcion.AcceptsTab = true;
-            this.tbxDescripcion.Location = new System.Drawing.Point(324, 308);
+            this.tbxDescripcion.Location = new System.Drawing.Point(180, 269);
             this.tbxDescripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbxDescripcion.Name = "tbxDescripcion";
             this.tbxDescripcion.Size = new System.Drawing.Size(338, 26);
@@ -75,11 +75,11 @@
             // lblCategorias
             // 
             this.lblCategorias.AutoSize = true;
-            this.lblCategorias.Font = new System.Drawing.Font("Corbel", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategorias.Location = new System.Drawing.Point(159, 177);
+            this.lblCategorias.Font = new System.Drawing.Font("Corbel", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategorias.Location = new System.Drawing.Point(75, 175);
             this.lblCategorias.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.lblCategorias.Name = "lblCategorias";
-            this.lblCategorias.Size = new System.Drawing.Size(552, 88);
+            this.lblCategorias.Size = new System.Drawing.Size(463, 73);
             this.lblCategorias.TabIndex = 15;
             this.lblCategorias.Text = "Nueva Categoria";
             // 
@@ -112,7 +112,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(867, 33);
+            this.menuStrip.Size = new System.Drawing.Size(610, 33);
             this.menuStrip.TabIndex = 16;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -125,7 +125,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(230, 312);
+            this.lblNombre.Location = new System.Drawing.Point(86, 274);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(69, 20);
@@ -136,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 746);
+            this.ClientSize = new System.Drawing.Size(610, 680);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.btnCancelar);
@@ -146,6 +146,7 @@
             this.Controls.Add(this.btnVolver);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmAgregarCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAgregarCategoria";
             this.Load += new System.EventHandler(this.frmAgregarCategoria_Load);
             this.menuStrip.ResumeLayout(false);
