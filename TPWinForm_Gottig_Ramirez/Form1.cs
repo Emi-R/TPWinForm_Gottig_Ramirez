@@ -28,5 +28,15 @@ namespace TPWinForm_Gottig_Ramirez
             frmCategorias ventanaCategorias = new frmCategorias();
             ventanaCategorias.ShowDialog();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lblAbout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
