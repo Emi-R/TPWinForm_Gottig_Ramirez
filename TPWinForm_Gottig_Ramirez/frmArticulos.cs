@@ -329,5 +329,9 @@ namespace TPWinForm_Gottig_Ramirez
                 lblY.Visible = false;
             }
         }
+        private void dgvArticulos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvArticulos.ClearSelection();          
+        }
     }
 }
