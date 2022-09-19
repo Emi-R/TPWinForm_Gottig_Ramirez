@@ -147,9 +147,6 @@
   <data name="btnAgregar.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 24</value>
   </data>
-  <data name="btnAgregar.Text" xml:space="preserve">
-    <value>Agregar categoría</value>
-  </data>
   <data name="btnModificar.Location" type="System.Drawing.Point, System.Drawing">
     <value>179, 382</value>
   </data>
@@ -158,8 +155,5 @@
   </data>
   <data name="dgvCategorias.Location" type="System.Drawing.Point, System.Drawing">
     <value>71, 129</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Categorías</value>
   </data>
 </root>
