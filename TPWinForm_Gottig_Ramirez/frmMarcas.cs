@@ -43,7 +43,7 @@ namespace TPWinForm_Gottig_Ramirez
 
             if(filtro != null)
             {
-                listaFilrada = listadoMarcas.FindAll(m => m.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                listaFilrada = listadoMarcas.FindAll(m => m.Descripcion.ToUpper().StartsWith(filtro.ToUpper()));
             }
             else
             {
@@ -130,6 +130,11 @@ namespace TPWinForm_Gottig_Ramirez
         {
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             MessageBox.Show(message, title, buttons, MessageBoxIcon.Exclamation);
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

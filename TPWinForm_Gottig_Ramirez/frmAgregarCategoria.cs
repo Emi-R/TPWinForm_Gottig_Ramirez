@@ -35,7 +35,7 @@ namespace TPWinForm_Gottig_Ramirez
             {
                 lblCategorias.Text = $"Categoria: {categoria.Descripcion}";
                 btnAgregar.Text = "Modificar categoria";
-                lblNombre.Text = categoria.Descripcion;
+                tbxDescripcion.Text = categoria.Descripcion;
             }
         }
 

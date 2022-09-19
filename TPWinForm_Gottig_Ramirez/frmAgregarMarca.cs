@@ -96,5 +96,10 @@ namespace TPWinForm_Gottig_Ramirez
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             MessageBox.Show(message, title, buttons, MessageBoxIcon.Exclamation);
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

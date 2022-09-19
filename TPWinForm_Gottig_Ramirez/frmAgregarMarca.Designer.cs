@@ -38,30 +38,28 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(69, 276);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(46, 179);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(69, 20);
+            this.lblNombre.Size = new System.Drawing.Size(47, 13);
             this.lblNombre.TabIndex = 22;
             this.lblNombre.Text = "Nombre:";
             // 
             // btnCancelar
             // 
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Location = new System.Drawing.Point(305, 331);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancelar.Location = new System.Drawing.Point(203, 215);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(198, 35);
+            this.btnCancelar.Size = new System.Drawing.Size(132, 23);
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(71, 328);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAgregar.Location = new System.Drawing.Point(47, 213);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(194, 38);
+            this.btnAgregar.Size = new System.Drawing.Size(129, 25);
             this.btnAgregar.TabIndex = 19;
             this.btnAgregar.Text = "Agregar marca";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -70,35 +68,35 @@
             // tbxDescripcion
             // 
             this.tbxDescripcion.AcceptsTab = true;
-            this.tbxDescripcion.Location = new System.Drawing.Point(163, 271);
-            this.tbxDescripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbxDescripcion.Location = new System.Drawing.Point(109, 176);
             this.tbxDescripcion.Name = "tbxDescripcion";
-            this.tbxDescripcion.Size = new System.Drawing.Size(338, 26);
+            this.tbxDescripcion.Size = new System.Drawing.Size(227, 20);
             this.tbxDescripcion.TabIndex = 18;
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Corbel", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(90, 179);
-            this.lblMarca.Margin = new System.Windows.Forms.Padding(14);
+            this.lblMarca.Location = new System.Drawing.Point(60, 116);
+            this.lblMarca.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(371, 73);
+            this.lblMarca.Size = new System.Drawing.Size(250, 49);
             this.lblMarca.TabIndex = 21;
             this.lblMarca.Text = "Nueva Marca";
             this.lblMarca.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmAgregarMarca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 651);
+            this.ClientSize = new System.Drawing.Size(395, 423);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.tbxDescripcion);
             this.Controls.Add(this.lblMarca);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmAgregarMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAgregarMarca";

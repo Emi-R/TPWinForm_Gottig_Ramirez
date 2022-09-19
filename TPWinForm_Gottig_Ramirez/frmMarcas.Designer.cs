@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMarcas));
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -54,56 +54,55 @@
             this.dgvMarcas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvMarcas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvMarcas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.NullValue = "N/A";
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMarcas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.NullValue = "N/A";
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMarcas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMarcas.ColumnHeadersHeight = 34;
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMarcas.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SpringGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle10.NullValue = "N/A";
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMarcas.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SpringGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.NullValue = "N/A";
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMarcas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMarcas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvMarcas.EnableHeadersVisualStyles = false;
             this.dgvMarcas.GridColor = System.Drawing.Color.DarkSlateGray;
             this.dgvMarcas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dgvMarcas.Location = new System.Drawing.Point(102, 185);
-            this.dgvMarcas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvMarcas.MinimumSize = new System.Drawing.Size(225, 0);
+            this.dgvMarcas.Location = new System.Drawing.Point(68, 120);
+            this.dgvMarcas.MinimumSize = new System.Drawing.Size(150, 0);
             this.dgvMarcas.MultiSelect = false;
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.ReadOnly = true;
             this.dgvMarcas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DarkKhaki;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.NullValue = "N/A";
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMarcas.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkKhaki;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.NullValue = "N/A";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMarcas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMarcas.RowHeadersVisible = false;
             this.dgvMarcas.RowHeadersWidth = 150;
             this.dgvMarcas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.NullValue = "N/A";
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvMarcas.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.NullValue = "N/A";
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvMarcas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMarcas.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.dgvMarcas.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvMarcas.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
@@ -112,17 +111,16 @@
             this.dgvMarcas.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMarcas.ShowEditingIcon = false;
-            this.dgvMarcas.Size = new System.Drawing.Size(450, 362);
+            this.dgvMarcas.Size = new System.Drawing.Size(300, 235);
             this.dgvMarcas.TabIndex = 10;
             // 
             // btnEliminar
             // 
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnEliminar.Location = new System.Drawing.Point(408, 576);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEliminar.Location = new System.Drawing.Point(272, 374);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(144, 34);
+            this.btnEliminar.Size = new System.Drawing.Size(96, 22);
             this.btnEliminar.TabIndex = 13;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -132,10 +130,9 @@
             // 
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnModificar.Location = new System.Drawing.Point(263, 574);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnModificar.Location = new System.Drawing.Point(175, 373);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(136, 35);
+            this.btnModificar.Size = new System.Drawing.Size(91, 23);
             this.btnModificar.TabIndex = 12;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -144,10 +141,9 @@
             // btnAgregar
             // 
             this.btnAgregar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAgregar.Location = new System.Drawing.Point(105, 573);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAgregar.Location = new System.Drawing.Point(70, 372);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(148, 37);
+            this.btnAgregar.Size = new System.Drawing.Size(99, 24);
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar marca";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -156,10 +152,9 @@
             // btnFiltro
             // 
             this.btnFiltro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnFiltro.Location = new System.Drawing.Point(463, 138);
-            this.btnFiltro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnFiltro.Location = new System.Drawing.Point(309, 90);
             this.btnFiltro.Name = "btnFiltro";
-            this.btnFiltro.Size = new System.Drawing.Size(88, 31);
+            this.btnFiltro.Size = new System.Drawing.Size(59, 20);
             this.btnFiltro.TabIndex = 9;
             this.btnFiltro.Text = "Buscar";
             this.btnFiltro.UseVisualStyleBackColor = true;
@@ -168,10 +163,9 @@
             // tbxFiltro
             // 
             this.tbxFiltro.AcceptsTab = true;
-            this.tbxFiltro.Location = new System.Drawing.Point(102, 139);
-            this.tbxFiltro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbxFiltro.Location = new System.Drawing.Point(68, 90);
             this.tbxFiltro.Name = "tbxFiltro";
-            this.tbxFiltro.Size = new System.Drawing.Size(338, 26);
+            this.tbxFiltro.Size = new System.Drawing.Size(227, 20);
             this.tbxFiltro.TabIndex = 8;
             this.tbxFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxFiltro_KeyPress);
             // 
@@ -180,10 +174,10 @@
             this.lblMarcas.AutoSize = true;
             this.lblMarcas.Font = new System.Drawing.Font("Corbel", 36F, System.Drawing.FontStyle.Bold);
             this.lblMarcas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblMarcas.Location = new System.Drawing.Point(182, 32);
-            this.lblMarcas.Margin = new System.Windows.Forms.Padding(14);
+            this.lblMarcas.Location = new System.Drawing.Point(121, 21);
+            this.lblMarcas.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
             this.lblMarcas.Name = "lblMarcas";
-            this.lblMarcas.Size = new System.Drawing.Size(258, 88);
+            this.lblMarcas.Size = new System.Drawing.Size(173, 59);
             this.lblMarcas.TabIndex = 15;
             this.lblMarcas.Text = "Marcas";
             // 
@@ -197,21 +191,21 @@
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnVolver.Image = ((System.Drawing.Image)(resources.GetObject("btnVolver.Image")));
             this.btnVolver.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnVolver.Location = new System.Drawing.Point(13, 23);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnVolver.Location = new System.Drawing.Point(9, 15);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(87, 75);
+            this.btnVolver.Size = new System.Drawing.Size(58, 49);
             this.btnVolver.TabIndex = 14;
             this.btnVolver.Text = "Volver";
             this.btnVolver.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // frmMarcas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 671);
+            this.ClientSize = new System.Drawing.Size(435, 436);
             this.Controls.Add(this.dgvMarcas);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -220,6 +214,7 @@
             this.Controls.Add(this.tbxFiltro);
             this.Controls.Add(this.lblMarcas);
             this.Controls.Add(this.btnVolver);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMarcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMarcas";

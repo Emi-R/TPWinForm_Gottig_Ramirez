@@ -45,7 +45,7 @@ namespace TPWinForm_Gottig_Ramirez
 
             if (filtro != null)
             {
-                listaFiltrada = listaCategorias.FindAll(c => c.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                listaFiltrada = listaCategorias.FindAll(c => c.Descripcion.ToUpper().StartsWith(filtro.ToUpper()));
             }
             else
             {
