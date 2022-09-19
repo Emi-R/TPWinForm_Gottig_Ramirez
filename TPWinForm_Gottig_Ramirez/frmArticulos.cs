@@ -272,7 +272,8 @@ namespace TPWinForm_Gottig_Ramirez
                 if (rbtDesc.Checked == true)
                     ordenarPor = 1;
 
-                dgvArticulos.DataSource = articuloNegocio.Filtrar(campo, criterio, filtro, ordenarPor, inicio, fin);
+                List<Articulo> listaFiltrada = articuloNegocio.Filtrar(campo, criterio, filtro, ordenarPor, inicio, fin);
+                dgvArticulos.DataSource = listaFiltrada;
 
                 if (dgvArticulos.CurrentRow == null)
                 {
@@ -284,6 +285,8 @@ namespace TPWinForm_Gottig_Ramirez
                 {
                     btnModificarArt.Enabled = true;
                     btnEliminar.Enabled = true;
+                    cargarImagen(listaFiltrada[0].ImagenUrl);
+                    lblPrecioDetalle.Text = listaFiltrada[0].Precio.ToString();
                 }
 
                 ocultarColumnas();
