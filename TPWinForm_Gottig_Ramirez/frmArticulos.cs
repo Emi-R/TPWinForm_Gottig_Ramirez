@@ -165,26 +165,14 @@ namespace TPWinForm_Gottig_Ramirez
             this.Close();
         }
 
-        //private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    if (dgvArticulos.CurrentRow != null)
-        //    {
-        //        Articulo picked = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-        //        cargarImagen(picked.ImagenUrl);
-        //        lblPrecioDetalle.Visible = true;
-        //        lblPrecioDetalle.Text = picked.Precio.ToString();
-        //    }
-        //}
-
         private void tbxFiltroRapido_TextChanged(object sender, EventArgs e)
         {
             List<Articulo> listaFiltroRapido;
             string filtro = tbxFiltroRapido.Text;
 
-            if (filtro.Length >= 3)
+            if (filtro.Length >= 2)
             {
                 listaFiltroRapido = listaArt.FindAll(a => a.Nombre.ToUpper().Contains(tbxFiltroRapido.Text.ToUpper()));
-
             }
             else
             {
@@ -202,9 +190,12 @@ namespace TPWinForm_Gottig_Ramirez
             }
             else
             {
+                dgvArticulos.CurrentCell = dgvArticulos.Rows[0].Cells[1];
+                dgvArticulos.Rows[0].Selected = true;
                 btnModificarArt.Enabled = true;
                 btnEliminar.Enabled = true;
-
+                cargarImagen(listaFiltroRapido[0].ImagenUrl);
+                lblPrecioDetalle.Text = listaFiltroRapido[0].Precio.ToString();
             }
 
             ocultarColumnas();
@@ -314,6 +305,8 @@ namespace TPWinForm_Gottig_Ramirez
             updateGrilla();
             txtFiltro.Clear();
             tbxFiltroRapido.Clear();
+            btnModificarArt.Enabled = true;
+            btnEliminar.Enabled = true;
         }
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -364,10 +357,5 @@ namespace TPWinForm_Gottig_Ramirez
 
 
         }
-
-        //private void dgvArticulos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        //{
-        //    dgvArticulos.ClearSelection();          
-        //}
     }
 }

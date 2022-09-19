@@ -208,7 +208,7 @@ namespace Negocio
 
             try
             {
-                string consulta = "SELECT A.ID AS ID, A.CODIGO AS CODIGO, A.NOMBRE AS NOMBRE, A.DESCRIPCION AS DESCRIPCION, M.ID AS IdMarca,M.Descripcion AS MARCA, C.ID AS IdCategoria, C.Descripcion AS CATEGORIA, A.IMAGENURL AS IMAGENURL, A.Precio AS PRECIO FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id And ";
+                string consulta = "SELECT A.ID AS ID, A.CODIGO AS CODIGO, A.NOMBRE AS NOMBRE, A.DESCRIPCION AS DESCRIPCION, M.ID AS IdMarca,M.Descripcion AS MARCA, C.ID AS IdCategoria, C.Descripcion AS CATEGORIA, A.IMAGENURL AS IMAGENURL, A.Precio AS PRECIO FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id Where ";
 
                 //Se agrega el where en string de consulta segun criterios y campo
                 consulta = AddWhereConsulta(consulta, campo, criterio, filtro, inicio, fin);
@@ -251,10 +251,10 @@ namespace Negocio
                     if (!(db.Reader["Descripcion"] is DBNull))
                         articulo.Descripcion = (string)db.Reader["Descripcion"];
 
-                    articulo.Marca = new Marca();
 
                     if (!(db.Reader["MARCA"] is DBNull))
                     {
+                        articulo.Marca = new Marca();
                         articulo.Marca.ID = (int)db.Reader["IdMarca"];
                         articulo.Marca.Descripcion = (string)db.Reader["Marca"];
                     }
