@@ -46,8 +46,11 @@ namespace TPWinForm_Gottig_Ramirez
                 dgvArticulos.DataSource = listaArt;
                 ocultarColumnas();
                 cargarImagen(listaArt[0].ImagenUrl);
+                lblPrecioDetalle.Text = listaArt[0].Precio.ToString();
+                lblPrecioDetalle.Visible = true;
                 txtFiltro.Clear();
                 tbxFiltroRapido.Clear();
+                dgvArticulos.Select();
             }
             catch (Exception ex)
             {
@@ -78,7 +81,6 @@ namespace TPWinForm_Gottig_Ramirez
 
         }
 
-
         //Boton Agregar Articulo
 
         private void btnAgregarArt_Click(object sender, EventArgs e)
@@ -97,6 +99,7 @@ namespace TPWinForm_Gottig_Ramirez
                 Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 frmAgregarArt formModificar = new frmAgregarArt(articulo);
                 formModificar.ShowDialog();
+                updateGrilla();
             }
             else
             {
@@ -107,41 +110,51 @@ namespace TPWinForm_Gottig_Ramirez
 
                 MessageBox.Show(mensaje, title, buttons, MessageBoxIcon.Exclamation);
             }
-            updateGrilla();
-
         }
 
         //Boton Eliminar Articulo
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Articulo picked = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-
-            string mensaje = $"Desea eliminar el articulo {picked.Codigo}?";
-            string title = "Confirmar borrado";
-
-            DialogResult msg = MessageBox.Show(mensaje, title, buttons, MessageBoxIcon.Question);
-
-            if (msg == DialogResult.Yes)
+            if (dgvArticulos.CurrentRow != null)
             {
-                ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+                Articulo picked = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
-                try
+                string mensaje = $"Desea eliminar el articulo {picked.Codigo}?";
+                string title = "Confirmar borrado";
+
+                DialogResult msg = MessageBox.Show(mensaje, title, buttons, MessageBoxIcon.Question);
+
+                if (msg == DialogResult.Yes)
                 {
-                    articuloNegocio.EliminarArticulo(picked);
-                    updateGrilla();
+                    ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
+                    try
+                    {
+                        articuloNegocio.EliminarArticulo(picked);
+                        updateGrilla();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        throw;
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
-                    throw;
+                    return;
                 }
             }
             else
             {
-                return;
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+                string mensaje = $"No ha seleccionado ningun articulo";
+                string title = "Atencion!";
+
+                MessageBox.Show(mensaje, title, buttons, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -152,16 +165,16 @@ namespace TPWinForm_Gottig_Ramirez
             this.Close();
         }
 
-        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvArticulos.CurrentRow != null)
-            {
-                Articulo picked = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                cargarImagen(picked.ImagenUrl);
-                lblPrecioDetalle.Visible = true;
-                lblPrecioDetalle.Text = picked.Precio.ToString();
-            }
-        }
+        //private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    if (dgvArticulos.CurrentRow != null)
+        //    {
+        //        Articulo picked = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+        //        cargarImagen(picked.ImagenUrl);
+        //        lblPrecioDetalle.Visible = true;
+        //        lblPrecioDetalle.Text = picked.Precio.ToString();
+        //    }
+        //}
 
         private void tbxFiltroRapido_TextChanged(object sender, EventArgs e)
         {
@@ -171,6 +184,7 @@ namespace TPWinForm_Gottig_Ramirez
             if (filtro.Length >= 3)
             {
                 listaFiltroRapido = listaArt.FindAll(a => a.Nombre.ToUpper().Contains(tbxFiltroRapido.Text.ToUpper()));
+
             }
             else
             {
@@ -190,6 +204,7 @@ namespace TPWinForm_Gottig_Ramirez
             {
                 btnModificarArt.Enabled = true;
                 btnEliminar.Enabled = true;
+
             }
 
             ocultarColumnas();
@@ -329,9 +344,30 @@ namespace TPWinForm_Gottig_Ramirez
                 lblY.Visible = false;
             }
         }
-        private void dgvArticulos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+
+        private void dgvArticulos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvArticulos.ClearSelection();          
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo picked = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(picked.ImagenUrl);
+                lblPrecioDetalle.Visible = true;
+                lblPrecioDetalle.Text = picked.Precio.ToString();
+            }
         }
+
+        private void irAMenúMarcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmCategorias ventanaCat = new frmCategorias();
+            ventanaCat.ShowDialog();
+
+
+        }
+
+        //private void dgvArticulos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        //{
+        //    dgvArticulos.ClearSelection();          
+        //}
     }
 }
